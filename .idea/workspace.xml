@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="Im dying inside">
-      <change afterPath="$PROJECT_DIR$/Project/src/model/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/model/StudentBorrower.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/model/Worker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/Library.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/model/Librarian.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/LibrarianView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/model/EntityBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/EntityBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +62,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Facets" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -121,6 +121,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Im dying inside" />
-    <option name="LAST_COMMIT_MESSAGE" value="Im dying inside" />
+    <MESSAGE value="Worker, StudentBorrower, and Book model classes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Worker, StudentBorrower, and Book model classes" />
   </component>
 </project>
