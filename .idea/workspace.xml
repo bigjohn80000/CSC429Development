@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="Im THRIVING" />
+    <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="none">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/TestMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/dbConfig.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/dbConfig.ini" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,8 +56,8 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Project/src/mysql-connector-java-5.1.7-bin.jar" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
@@ -65,7 +70,7 @@
       <recent name="C:\Users\zachk\IdeaProjects\CSC429Development\Project\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Library">
+  <component name="RunManager" selected="Application.TestMain">
     <configuration name="Library" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Library" />
       <module name="Project" />
@@ -82,8 +87,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Library" />
         <item itemvalue="Application.TestMain" />
+        <item itemvalue="Application.Library" />
         <item itemvalue="Application.Library" />
         <item itemvalue="Application.TestMain" />
       </list>
@@ -112,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617929863308</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="none">
+      <created>1617932769254</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1617932769254</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -130,6 +142,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Im dying inside" />
     <MESSAGE value="Im THRIVING" />
-    <option name="LAST_COMMIT_MESSAGE" value="Im THRIVING" />
+    <MESSAGE value="none" />
+    <option name="LAST_COMMIT_MESSAGE" value="none" />
   </component>
 </project>

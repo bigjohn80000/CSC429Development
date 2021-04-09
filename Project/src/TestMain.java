@@ -1,10 +1,11 @@
 import java.util.Properties;
+import model.*;
 import java.util.Scanner;
-/*
+
 public class TestMain {
+    public static void main(String[] args) {
 
-        public static void main(String [] args){
-
+            /*
             Scanner input = new Scanner(System.in);
             Properties prop = new Properties();
             BookCollection bookList = new BookCollection();
@@ -89,5 +90,28 @@ public class TestMain {
             System.out.println(patronList.toString());
 
         }
+
+     */
+        try {
+            Properties p = new Properties();
+            p.setProperty("bannerId", "800732338");
+            p.setProperty("password", "Hgt998557");
+            p.setProperty("firstName", "Hunter");
+            p.setProperty("lastName", "Thomas");
+            p.setProperty("contactPhone", "5857389454");
+            p.setProperty("email", "huntergthomas1998@gmail.com");
+            p.setProperty("credentials", "Administrator");
+            p.setProperty("dateOfLatestCredentialStatus", "2021-04-10");
+            p.setProperty("dateOfHire", "2020-04-10");
+            p.setProperty("status", "Active");
+
+            Worker w = new Worker(p);
+            w.update();
+
+        } catch (Exception ex)
+        {
+            System.out.println("Error in accessing database: " + ex.toString());
+        }
+    }
 }
- */
+
