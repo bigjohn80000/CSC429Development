@@ -2,26 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="Im dying inside">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_7_bin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/ATM.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/ATM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/Account.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/AccountHolder.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/BankATM.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/ErrorLog.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/HistoryOfBugsDiscovered.doc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/dbConfig.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/mysql-connector-java-5.1.7-bin.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/runATM.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/model/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/model/StudentBorrower.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/model/Worker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/model/EntityBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/EntityBase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <favorite-branches>
@@ -31,6 +28,7 @@
             <value>
               <list>
                 <branch-info repo="$PROJECT_DIR$" source="Zach" />
+                <branch-info repo="$PROJECT_DIR$" source="Hunter" />
               </list>
             </value>
           </entry>
@@ -39,7 +37,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Zach" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -57,8 +55,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Project/src/mysql-connector-java-5.1.7-bin.jar" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Facets" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -66,6 +70,19 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\zachk\IdeaProjects\CSC429Development\Project\src" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -75,6 +92,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1617920474999</updated>
+      <workItem from="1617926195057" duration="3136000" />
     </task>
     <task id="LOCAL-00001" summary="Im dying inside">
       <created>1617920575439</created>
@@ -85,6 +103,9 @@
     </task>
     <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
