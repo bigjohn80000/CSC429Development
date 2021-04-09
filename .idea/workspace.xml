@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="Im dying inside">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_7_bin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/ATM.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/ATM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/Account.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/AccountHolder.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/BankATM.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/ErrorLog.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/HistoryOfBugsDiscovered.doc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/dbConfig.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/mysql-connector-java-5.1.7-bin.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/runATM.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Project/src/TestMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <favorite-branches>
@@ -48,6 +42,9 @@
     <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1quDEiN2NZcLKVTkPZvPGEQbKlr" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -66,6 +63,20 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\zachk\IdeaProjects\CSC429Development\Project\src" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TestMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestMain" />
+      <module name="Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.TestMain" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
