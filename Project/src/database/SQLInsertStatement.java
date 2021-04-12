@@ -80,11 +80,11 @@ public class SQLInsertStatement extends SQLStatement
 			String theColumnValue = insertEscapes(insertValues.getProperty(theColumnName));
 			// System.out.println("The column value is " + theColumnValue);
 			theColumnNamesList += theColumnName;
-			//	System.out.println("The list is " + theColumnNamesList);
+				//System.out.println("The list is " + theColumnNamesList);
 
 			//System.out.println("Checking insertType");
 			String insertType = schema.getProperty(theColumnName);
-			//		System.out.println("InsertType = " + insertType);
+					//System.out.println("InsertType = " + insertType);
 			//System.out.println("Schema is : " + schema);
 
 			if (insertType.equals("numeric") == true)
