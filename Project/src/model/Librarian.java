@@ -13,7 +13,6 @@ import impresario.IModel;
 import impresario.ISlideShow;
 import impresario.IView;
 import impresario.ModelRegistry;
-
 import exception.InvalidPrimaryKeyException;
 import exception.PasswordMismatchException;
 import event.Event;
@@ -33,7 +32,8 @@ public class Librarian implements IView, IModel
     private Properties dependencies;
     private ModelRegistry myRegistry;
 
-    private AccountHolder myAccountHolder;
+    private Worker worker;
+
 
     // GUI Components
     private Hashtable<String, Scene> myViews;
@@ -51,10 +51,10 @@ public class Librarian implements IView, IModel
 
         // STEP 3.1: Create the Registry object - if you inherit from
         // EntityBase, this is done for you. Otherwise, you do it yourself
-        myRegistry = new ModelRegistry("Teller");
+        myRegistry = new ModelRegistry("Librarian");
         if(myRegistry == null)
         {
-            new Event(Event.getLeafLevelClassName(this), "Teller",
+            new Event(Event.getLeafLevelClassName(this), "Librarian",
                     "Could not instantiate Registry", Event.ERROR);
         }
 
@@ -62,7 +62,7 @@ public class Librarian implements IView, IModel
         setDependencies();
 
         // Set up the initial view
-        createAndShowTellerView();
+        createAndShowLibrarianView();
     }
 
     //-----------------------------------------------------------------------------------
@@ -100,11 +100,11 @@ public class Librarian implements IView, IModel
             return transactionErrorMessage;
         }
         else
-        if (key.equals("Name") == true)
+        if (key.equals("firstName") == true)
         {
-            if (myAccountHolder != null)
+            if (worker != null)
             {
-                return myAccountHolder.getState("Name");
+                return worker.getState("firstName");
             }
             else
                 return "Undefined";
@@ -126,7 +126,7 @@ public class Librarian implements IView, IModel
             {
                 loginErrorMessage = "";
 
-                boolean flag = loginAccountHolder((Properties)value);
+                boolean flag = loginWorker((Properties)value);
                 if (flag == true)
                 {
                     createAndShowTransactionChoiceView();
@@ -134,31 +134,30 @@ public class Librarian implements IView, IModel
             }
         }
         else
+        if (key.equals("AddWorker") == true)
+        {
+            createAndShowAddWorkerView();
+        }
+        else
+        if (key.equals("insertWorker") == true)
+        {
+            try {
+                insertWorker((Properties)value);
+                } catch (InvalidPrimaryKeyException e) {
+                Worker insertedWorker = new Worker((Properties)value);
+                insertedWorker.update();
+            }
+
+        }
+        else
         if (key.equals("CancelTransaction") == true)
         {
             createAndShowTransactionChoiceView();
         }
         else
-        if ((key.equals("Deposit") == true) || (key.equals("Withdraw") == true) ||
-                (key.equals("Transfer") == true) || (key.equals("BalanceInquiry") == true) ||
-                (key.equals("ImposeServiceCharge") == true))
-        {
-            String transType = key;
-
-            if (myAccountHolder != null)
-            {
-                doTransaction(transType);
-            }
-            else
-            {
-                transactionErrorMessage = "Transaction impossible: Customer not identified";
-            }
-
-        }
-        else
         if (key.equals("Logout") == true)
         {
-            myAccountHolder = null;
+            worker = null;
             myViews.remove("TransactionChoiceView");
 
             createAndShowTellerView();
@@ -180,12 +179,14 @@ public class Librarian implements IView, IModel
      * Login AccountHolder corresponding to user name and password.
      */
     //----------------------------------------------------------
-    public boolean loginAccountHolder(Properties props)
+    public boolean loginWorker(Properties props)
     {
         try
         {
-            myAccountHolder = new AccountHolder(props);
-            // DEBUG System.out.println("Account Holder: " + myAccountHolder.getState("Name") + " successfully logged in");
+            String username = props.getProperty("bannerId");
+            String password = props.getProperty("password");
+            worker = new Worker(username, password);
+            System.out.println("Account Holder: " + worker.getState("firstName") + " successfully logged in");
             return true;
         }
         catch (InvalidPrimaryKeyException ex)
@@ -208,24 +209,7 @@ public class Librarian implements IView, IModel
      * create.
      */
     //----------------------------------------------------------
-    public void doTransaction(String transactionType)
-    {
-        try
-        {
-            Transaction trans = TransactionFactory.createTransaction(
-                    transactionType, myAccountHolder);
 
-            trans.subscribe("CancelTransaction", this);
-            trans.stateChangeRequest("DoYourJob", "");
-        }
-        catch (Exception ex)
-        {
-            transactionErrorMessage = "FATAL ERROR: TRANSACTION FAILURE: Unrecognized transaction!!";
-            new Event(Event.getLeafLevelClassName(this), "createTransaction",
-                    "Transaction Creation Failure: Unrecognized transaction " + ex.toString(),
-                    Event.ERROR);
-        }
-    }
 
     //----------------------------------------------------------
     private void createAndShowTransactionChoiceView()
@@ -246,6 +230,38 @@ public class Librarian implements IView, IModel
 
     }
 
+    private void createAndShowAddWorkerView()
+    {
+        Scene currentScene = (Scene)myViews.get("AddWorkerView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("AddWorkerView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("TransactionChoiceView", currentScene);
+        }
+
+
+        // make the view visible by installing it into the frame
+        swapToView(currentScene);
+
+    }
+
+    private void createAndShowLibrarianView(){
+        Scene currentScene = (Scene)myViews.get("LibrarianView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("LibrarianView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("LibrarianView", currentScene);
+        }
+
+        swapToView(currentScene);
+
+    }
     //------------------------------------------------------------
     private void createAndShowTellerView()
     {
@@ -304,6 +320,10 @@ public class Librarian implements IView, IModel
         //Place in center
         WindowPosition.placeCenter(myStage);
 
+    }
+    public void insertWorker(Properties p) throws InvalidPrimaryKeyException {
+        String bannerId = p.getProperty("bannerId");
+        Worker n = new Worker(bannerId);
     }
 
 }

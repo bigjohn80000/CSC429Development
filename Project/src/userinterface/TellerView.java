@@ -77,7 +77,7 @@ public class TellerView extends View
 	private Node createTitle()
 	{
 		
-		Text titleText = new Text("       Brockport Bank ATM          ");
+		Text titleText = new Text("       Brockport Bank ATM Hunter         ");
 		titleText.setFont(Font.font("Arial", FontWeight.BOLD, 20));
 		titleText.setTextAlignment(TextAlignment.CENTER);
 		titleText.setFill(Color.DARKGREEN);

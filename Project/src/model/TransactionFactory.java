@@ -2,8 +2,6 @@
 package model;
 
 // system imports
-import java.util.Vector;
-import javax.swing.JFrame;
 
 // project imports
 
@@ -12,17 +10,16 @@ import javax.swing.JFrame;
 public class TransactionFactory
 {
 
-	/**
-	 *
-	 */
+
+
 	//----------------------------------------------------------
 	public static Transaction createTransaction(String transType,
-		AccountHolder cust)
+												AccountHolder cust)
 		throws Exception
 	{
 		Transaction retValue = null;
 
-		if (transType.equals("Deposit") == true)
+		if (transType.equals("AddWorker") == true)
 		{
 			retValue = new DepositTransaction(cust);
 		}
@@ -49,4 +46,6 @@ public class TransactionFactory
 
 		return retValue;
 	}
+
+
 }

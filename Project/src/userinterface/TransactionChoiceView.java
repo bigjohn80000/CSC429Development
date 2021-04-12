@@ -49,9 +49,9 @@ public class TransactionChoiceView extends View
 
 	// constructor for this class -- takes a model object
 	//----------------------------------------------------------
-	public TransactionChoiceView(IModel teller)
+	public TransactionChoiceView(IModel librarian)
 	{
-		super(teller, "TransactionChoiceView");
+		super(librarian, "TransactionChoiceView");
 
 		// create a container for showing the contents
 		VBox container = new VBox(10);
@@ -80,14 +80,14 @@ public class TransactionChoiceView extends View
 	private VBox createTitle()
 	{
 		VBox container = new VBox(10);
-		Text titleText = new Text("       Brockport Bank ATM          ");
+		Text titleText = new Text("       Library Transactions          ");
 		titleText.setFont(Font.font("Arial", FontWeight.BOLD, 20));
 		titleText.setWrappingWidth(300);
 		titleText.setTextAlignment(TextAlignment.CENTER);
 		titleText.setFill(Color.DARKGREEN);
 		container.getChildren().add(titleText);
 
-		String accountHolderGreetingName = (String)myModel.getState("Name");
+		String accountHolderGreetingName = (String)myModel.getState("firstName");
 		Text welcomeText = new Text("Welcome, " + accountHolderGreetingName + "!");
 		welcomeText.setFont(Font.font("Arial", FontWeight.BOLD, 20));
 		welcomeText.setWrappingWidth(300);
@@ -116,13 +116,13 @@ public class TransactionChoiceView extends View
 		// create the buttons, listen for events, add them to the container
 		HBox dCont = new HBox(10);
 		dCont.setAlignment(Pos.CENTER);
-		depositButton = new Button("Deposit");
+		depositButton = new Button("Add Worker");
 		depositButton.setFont(Font.font("Arial", FontWeight.BOLD, 14));
 		depositButton.setOnAction(new EventHandler<ActionEvent>() {
 
        		     @Override
        		     public void handle(ActionEvent e) {
-       		     	myModel.stateChangeRequest("Deposit", null);    
+       		     	myModel.stateChangeRequest("AddWorker", null);
             	     }
         	});
 		dCont.getChildren().add(depositButton);
@@ -131,13 +131,13 @@ public class TransactionChoiceView extends View
 
 		HBox wCont = new HBox(10);
 		wCont.setAlignment(Pos.CENTER);
-		withdrawButton = new Button("Withdraw");
+		withdrawButton = new Button("Add Book");
 		withdrawButton.setFont(Font.font("Arial", FontWeight.BOLD, 14));
 		withdrawButton.setOnAction(new EventHandler<ActionEvent>() {
 
        		     @Override
        		     public void handle(ActionEvent e) {
-       		     	myModel.stateChangeRequest("Withdraw", null);    
+       		     	myModel.stateChangeRequest("AddBook", null);
             	     }
         	});
 		wCont.getChildren().add(withdrawButton);
@@ -146,13 +146,13 @@ public class TransactionChoiceView extends View
 
 		HBox tCont = new HBox(10);
 		tCont.setAlignment(Pos.CENTER);
-		transferButton = new Button("Transfer");
+		transferButton = new Button("Add Student Borrower");
 		transferButton.setFont(Font.font("Arial", FontWeight.BOLD, 14));
 		transferButton.setOnAction(new EventHandler<ActionEvent>() {
 
        		     @Override
        		     public void handle(ActionEvent e) {
-       		     	myModel.stateChangeRequest("Transfer", null);    
+       		     	myModel.stateChangeRequest("AddStudentBorrower", null);
             	     }
         	});
 		tCont.getChildren().add(transferButton);
