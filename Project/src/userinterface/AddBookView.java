@@ -36,13 +36,24 @@ import javax.swing.*;
 public class addBookView extends View{
 
     //GUI components
-     protected int bookID;
-     protected string bookTitle;
-     protected string author;
-     protected ComboBox status;
+    protected int barcode;
+    protected string title;
+    protected ComboBox discipline;
+    protected  string author1;
+    protected  string author2;
+    protected  string author3;
+    protected  string author4;
+    protected string bookTitle;
+    protected string publisher;
+    protected string yearOfPublication;
+    protected string isbn;
+    protected  ComboBox condition;
+    protected double suggestedPrice;
+    protected string notes;
+    protected ComboBox status;
 
-     protected Button submitButton;
-     protected Button doneButton;
+    protected Button submitButton;
+    protected Button doneButton;
 
     // For showing error message
     private MessageView statusLog;
