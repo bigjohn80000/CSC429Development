@@ -127,6 +127,7 @@ public class Worker extends EntityBase {
                 persistentState.setProperty(nextKey, nextValue);
             }
         }
+        exists = false;
 
     }
 
