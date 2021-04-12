@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="Database Connection Settings">
+    <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="Update">
+      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/AddBookView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ErrorLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ErrorLog.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/model/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/model/Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/model/Worker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/model/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/Librarian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/ViewFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/model/Book.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/model/Librarian.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/model/Librarian.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/ViewFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/ViewFactory.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +60,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/CSC429SOFTWAREDEV/ImplementationFX/ImplementationFX/mysql-connector-java-5.1.7-bin.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CSC429PairProg" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -135,7 +138,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617932422274</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update">
+      <created>1618263734982</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618263734982</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,7 +166,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Im dying inside" />
     <MESSAGE value="Worker, StudentBorrower, and Book model classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Worker, StudentBorrower, and Book model classes" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CSC429Development$Library.ic" NAME="Library Coverage Results" MODIFIED="1617932504544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

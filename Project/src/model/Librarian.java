@@ -33,6 +33,7 @@ public class Librarian implements IView, IModel
     private ModelRegistry myRegistry;
 
     private Worker worker;
+    private Book book;
 
 
     // GUI Components
@@ -139,6 +140,22 @@ public class Librarian implements IView, IModel
             createAndShowAddWorkerView();
         }
         else
+        if (key.equals("AddBook") == true)
+        {
+            createAndShowAddBookView();
+        }
+        else
+        if (key.equals("InsertBook") == true)
+        {
+            try {
+                insertBook((Properties)value);
+            } catch (InvalidPrimaryKeyException e) {
+                Book insertedBook = new Book((Properties)value);
+                insertedBook.update();
+            }
+        }
+        else
+
         if (key.equals("insertWorker") == true)
         {
             try {
@@ -239,7 +256,25 @@ public class Librarian implements IView, IModel
             // create our initial view
             View newView = ViewFactory.createView("AddWorkerView", this); // USE VIEW FACTORY
             currentScene = new Scene(newView);
-            myViews.put("TransactionChoiceView", currentScene);
+            myViews.put("AddWorkerView", currentScene);
+        }
+
+
+        // make the view visible by installing it into the frame
+        swapToView(currentScene);
+
+    }
+
+    private void createAndShowAddBookView()
+    {
+        Scene currentScene = (Scene)myViews.get("AddBookView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("AddBookView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("AddBookView", currentScene);
         }
 
 
@@ -326,4 +361,8 @@ public class Librarian implements IView, IModel
         Worker n = new Worker(bannerId);
     }
 
+    public void insertBook(Properties p) throws InvalidPrimaryKeyException {
+        String barcode = p.getProperty("barcode");
+        Book b = new Book(barcode);
+    }
 }

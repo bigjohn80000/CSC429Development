@@ -14,6 +14,10 @@ public class ViewFactory {
 		{
 			return new AddWorkerView(model);
 		}
+		else if(viewName.equals("AddBookView") == true)
+		{
+			return new AddBookView(model);
+		}
 		else if(viewName.equals("TransactionChoiceView") == true)
 		{
 			return new TransactionChoiceView(model);

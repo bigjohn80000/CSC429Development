@@ -10,13 +10,14 @@ public class Book extends EntityBase {
     private static final String myTableName = "Book";
     protected Properties dependencies;
     private String updateStatusMessage = "";
+    private boolean exists = true;
 
     public Book(String barcode) throws InvalidPrimaryKeyException {
         super(myTableName);
         this.setDependencies();
         String query = "SELECT * FROM " + myTableName + " WHERE (barcode = " + barcode + ")";
         Vector allDataFromDB = this.getSelectQueryResult(query);
-        if (allDataFromDB != null) {
+        if (allDataFromDB.isEmpty() == false) {
             int dataLen = allDataFromDB.size();
             if (dataLen != 1) {
                 throw new InvalidPrimaryKeyException("Multiple books matching id : " + barcode + " found.");
@@ -37,6 +38,7 @@ public class Book extends EntityBase {
         } else {
             throw new InvalidPrimaryKeyException("No book matching id : " + barcode + " found.");
         }
+        exists = true;
     }
 
     public Book(Properties props) {
@@ -52,6 +54,7 @@ public class Book extends EntityBase {
                 this.persistentState.setProperty(one, two);
             }
         }
+        exists = false;
     }
 
     public Book() {
@@ -94,20 +97,19 @@ public class Book extends EntityBase {
     //-----------------------------------------------------------------------------------
     private void updateStateInDatabase()
     {
+
         try
         {
-            if (persistentState.getProperty("barcode") != null)
+            if (exists == true)
             {
-
                 Properties whereClause = new Properties();
                 whereClause.setProperty("barcode", persistentState.getProperty("barcode"));
                 updatePersistentState(mySchema, persistentState, whereClause);
-                updateStatusMessage = "Book data for book number : " + persistentState.getProperty("barcode") + " updated successfully in database!";
+                updateStatusMessage = "Book data for book barcode number : " + persistentState.getProperty("barcode") + " updated successfully in database!";
             }
             else
             {
-                Integer bookId = insertAutoIncrementalPersistentState(mySchema, persistentState);
-                persistentState.setProperty("barcode", "" + bookId);
+                insertPersistentState(mySchema, persistentState);
                 updateStatusMessage = "Book data for new Book : " +  persistentState.getProperty("barcode")
                         + "installed successfully in database!";
             }
@@ -115,7 +117,7 @@ public class Book extends EntityBase {
         catch (SQLException ex)
         {
             System.out.println("Error: " + ex.toString());
-            updateStatusMessage = "Error in installing Book data in database!";
+            updateStatusMessage = "Error in installing Patron data in database!";
         }
         //DEBUG System.out.println("updateStateInDatabase " + updateStatusMessage);
     }
