@@ -8,10 +8,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -24,7 +21,7 @@ import model.Book;
 
 import java.util.Properties;
 
-public class AddBookView extends View{
+public class AddBookView<pubilc> extends View{
     // GUI components
     protected TextField barcode;
     protected TextField title;
@@ -283,6 +280,23 @@ public class AddBookView extends View{
             @Override
             public void handle(ActionEvent e) {
 
+                databaseUpdated();
+
+                barcode.clear();
+                title.clear();
+                author1.clear();
+                author2.clear();
+                author3.clear();
+                author4.clear();
+                publisher.clear();
+                yearOfPublication.clear();
+                isbn.clear();
+                suggestedPrice.clear();
+                notes.clear();
+
+                discipline.setValue("None");
+                quality.setValue("Good");
+                status.setValue("Active");
 
                 processAction(e);
 
@@ -411,6 +425,15 @@ public class AddBookView extends View{
         statusLog.clearErrorMessage();
     }
 
+    public void databaseUpdated(){
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Database");
+        alert.setHeaderText(null);
+        alert.setHeaderText("Book Added to Database");
+
+        alert.showAndWait();
+    }
 }
 
 //---------------------------------------------------------------

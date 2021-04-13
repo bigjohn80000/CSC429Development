@@ -8,10 +8,7 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -20,7 +17,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
-import model.Worker;
+
 
 import java.util.Properties;
 
@@ -222,9 +219,20 @@ public class AddWorkerView extends View{
             @Override
             public void handle(ActionEvent e) {
 
-                    processAction(e);
+                databaseUpdated();
 
+                bannerId.clear();
+                password.clear();
+                first.clear();
+                last.clear();
+                phone.clear();
+                email.clear();
+                cred.setValue("Ordinary");
+                dOLC.clear();
+                doh.clear();
+                status.setValue("Active");
 
+                processAction(e);
 
             }
         });
@@ -344,6 +352,15 @@ public class AddWorkerView extends View{
         statusLog.clearErrorMessage();
     }
 
+
+    public void databaseUpdated(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Database");
+        alert.setHeaderText(null);
+        alert.setHeaderText("Worker Added to Database");
+
+        alert.showAndWait();
+    }
 }
 
 //---------------------------------------------------------------
