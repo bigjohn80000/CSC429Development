@@ -95,6 +95,12 @@ public class Librarian implements IView, IModel
             return loginErrorMessage;
         }
         else
+        if (key.equals("AddStudentBorrowerView") == true)
+        {
+            createAndShowAddStudentBorrowerView();
+        }
+        else
+
         if (key.equals("TransactionError") == true)
         {
             return transactionErrorMessage;
@@ -259,6 +265,21 @@ public class Librarian implements IView, IModel
             myViews.put("TellerView", currentScene);
         }
 
+        swapToView(currentScene);
+
+    }
+
+    private void createAndShowAddStudentBorrowerView()
+    {
+        Scene currentScene = (Scene)myViews.get("AddStudentBorrowerView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("AddStudentBorrowerView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("AddStudentBorrowerView", currentScene);
+        }
         swapToView(currentScene);
 
     }

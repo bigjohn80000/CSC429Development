@@ -236,7 +236,24 @@ public class AddStudentBorrowerView extends View
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
+
+                databaseUpdated();
+
+                bannerId.clear();
+                firsName.clear();
+                lastName.clear();
+                contactPhone.clear();
+                email.clear();
+                borrowerStatus.clear();
+                dateOfLatestBorrowerStatus.clear();
+                dateOfRegistration.clear();
+                notes.clear();
+
+                borrowerStatus.setValue("Good Standing");
+                status.setValue("Active");
+
                 processAction(e);
+
             }
         });
 
@@ -355,7 +372,18 @@ public class AddStudentBorrowerView extends View
         statusLog.clearErrorMessage();
     }
 
+    public void databaseUpdated(){
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Database");
+        alert.setHeaderText(null);
+        alert.setHeaderText("Student Borrower Added To Database");
+
+        alert.showAndWait();
+    }
+
 }
+
 
 //---------------------------------------------------------------
 //	Revision History:
