@@ -97,6 +97,8 @@
       <list>
         <item itemvalue="Application.Library" />
         <item itemvalue="Application.TestMain" />
+        <item itemvalue="Application.Library" />
+        <item itemvalue="Application.TestMain" />
       </list>
     </recent_temporary>
   </component>

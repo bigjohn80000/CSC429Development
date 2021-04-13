@@ -1,13 +1,20 @@
+// specify the package
+
 package userinterface;
 
-import exception.InvalidPrimaryKeyException;
-import exception.PasswordMismatchException;
-import impresario.IModel;
+// system imports
+import java.text.NumberFormat;
+import java.util.Properties;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.Event;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -17,69 +24,77 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
+
+// project imports
+import impresario.IModel;
 import model.Book;
+import model.Librarian;
 
-import java.util.Properties;
+import javax.swing.*;
 
-public class AddBookView<pubilc> extends View{
-    // GUI components
-    protected TextField barcode;
-    protected TextField title;
-    protected TextField author1;
-    protected TextField author2;
-    protected TextField author3;
-    protected TextField author4;
-    protected TextField publisher;
-    protected TextField yearOfPublication;
-    protected TextField isbn;
-    protected TextField suggestedPrice;
-    protected TextField notes;
+public class addBookView extends View{
 
+    //GUI components
+    protected int barcode;
+    protected string title;
     protected ComboBox discipline;
-    protected ComboBox quality;
+    protected  string author1;
+    protected  string author2;
+    protected  string author3;
+    protected  string author4;
+    protected string bookTitle;
+    protected string publisher;
+    protected string yearOfPublication;
+    protected string isbn;
+    protected  ComboBox condition;
+    protected double suggestedPrice;
+    protected string notes;
     protected ComboBox status;
 
-    protected Button cancelButton;
     protected Button submitButton;
+    protected Button doneButton;
 
     // For showing error message
-    protected MessageView statusLog;
+    private MessageView statusLog;
 
     // constructor for this class -- takes a model object
     //----------------------------------------------------------
-    public AddBookView(IModel book)
+
+    public BookView( IModel Book)
     {
-        super(book, "AddBookView");
+        super(Book, "addBookView");
 
         // create a container for showing the contents
         VBox container = new VBox(10);
+
         container.setPadding(new Insets(15, 5, 5, 5));
 
-        // Add a title for this panel
+        // create a Node (Text) for showing the title
         container.getChildren().add(createTitle());
 
-        // create our GUI components, add them to this Container
+        // create a Node (GridPane) for showing data entry fields
         container.getChildren().add(createFormContent());
 
-        container.getChildren().add(createStatusLog("             "));
+        // Error message area
+        container.getChildren().add(createStatusLog("               "));
 
         getChildren().add(container);
 
         populateFields();
 
-        // myModel.subscribe("ServiceCharge", this);
-        //myModel.subscribe("UpdateStatusMessage", this);
+        // STEP 0: Be sure you tell your model what keys you are interested in
+        //myModel.subscribe("LoginError", this);
     }
 
-
-    // Create the title container
+    // Create the label (Text) for the title of the screen
     //-------------------------------------------------------------
     private Node createTitle()
     {
         HBox container = new HBox();
         container.setAlignment(Pos.CENTER);
 
-        Text titleText = new Text(" Add New Book ");
+        Text titleText = new Text(" New Book ");
         titleText.setFont(Font.font("Arial", FontWeight.BOLD, 20));
         titleText.setWrappingWidth(300);
         titleText.setTextAlignment(TextAlignment.CENTER);
@@ -89,7 +104,7 @@ public class AddBookView<pubilc> extends View{
         return container;
     }
 
-    // Create the main form content
+    // Create the main form contents
     //-------------------------------------------------------------
     private VBox createFormContent()
     {
@@ -107,164 +122,36 @@ public class AddBookView<pubilc> extends View{
         prompt.setFill(Color.BLACK);
         grid.add(prompt, 0, 0, 2, 1);
 
-        Text bcode = new Text(" Book's Barcode : ");
+        Text accNumLabel = new Text(" Book Author : ");
         Font myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
-        bcode.setFont(myFont);
-        bcode.setWrappingWidth(150);
-        bcode.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(bcode, 0, 1);
+        accNumLabel.setFont(myFont);
+        accNumLabel.setWrappingWidth(150);
+        accNumLabel.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(accNumLabel, 0, 1);
 
-        barcode = new TextField();
-        barcode.setEditable(true);
-        grid.add(barcode, 1, 1);
+        newAuthor = new TextField();
+        newAuthor.setEditable(true);
+        grid.add(newAuthor, 1, 1);
 
-        Text tit = new Text(" Title : ");
-        tit.setFont(myFont);
-        tit.setWrappingWidth(150);
-        tit.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(tit, 0, 2);
+        Text acctTypeLabel = new Text(" Title : ");
+        acctTypeLabel.setFont(myFont);
+        acctTypeLabel.setWrappingWidth(150);
+        acctTypeLabel.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(acctTypeLabel, 0, 2);
 
-        title = new TextField();
-        title.setEditable(true);
-        grid.add(title, 1, 2);
+        newTitle = new TextField();
+        newTitle.setEditable(true);
+        grid.add(newTitle, 1, 2);
 
-        Text dis = new Text(" Discipline : ");
-        dis.setFont(myFont);
-        dis.setWrappingWidth(150);
-        dis.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(dis, 0, 3);
+        Text balLabel = new Text(" Publication Year : ");
+        balLabel.setFont(myFont);
+        balLabel.setWrappingWidth(150);
+        balLabel.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(balLabel, 0, 3);
 
-        discipline = new ComboBox();
-        discipline.getItems().addAll(
-                "None",
-                "English",
-                "Mathematics",
-                "Physics",
-                "Biology",
-                "History",
-                "Government",
-                "Sociology",
-                "Psychology",
-                "Computer Science",
-                "Chemistry",
-                "Foreign Language",
-                "Art",
-                "Music"
-        );
-        discipline.setEditable(true);
-        discipline.setValue("None");
-        grid.add(discipline, 1, 3);
-
-        Text auth1 = new Text(" Author 1 : ");
-        auth1.setFont(myFont);
-        auth1.setWrappingWidth(150);
-        auth1.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(auth1, 0, 4);
-
-        author1 = new TextField();
-        author1.setEditable(true);
-        grid.add(author1, 1, 4);
-
-        Text auth2 = new Text(" Author 2 : ");
-        auth2.setFont(myFont);
-        auth2.setWrappingWidth(150);
-        auth2.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(auth2, 0, 5);
-
-        author2 = new TextField();
-        author2.setEditable(true);
-        grid.add(author2, 1, 5);
-
-        Text auth3 = new Text(" Author 3 : ");
-        auth3.setFont(myFont);
-        auth3.setWrappingWidth(150);
-        auth3.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(auth3, 0, 6);
-
-        author3 = new TextField();
-        author3.setEditable(true);
-        grid.add(author3, 1, 6);
-
-        Text auth4 = new Text(" Author 4 : ");
-        auth4.setFont(myFont);
-        auth4.setWrappingWidth(150);
-        auth4.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(auth4, 0, 7);
-
-        author4 = new TextField();
-        author4.setEditable(true);
-        grid.add(author4, 1, 7);
-
-        Text pub = new Text(" Publisher : ");
-        pub.setFont(myFont);
-        pub.setWrappingWidth(150);
-        pub.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(pub, 0, 8);
-
-        publisher = new TextField();
-        publisher.setEditable(true);
-        grid.add(publisher, 1, 8);
-
-        Text yOf = new Text(" Year of Publication : ");
-        yOf.setFont(myFont);
-        yOf.setWrappingWidth(150);
-        yOf.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(yOf, 0, 9);
-
-        yearOfPublication = new TextField();
-        yearOfPublication.setEditable(true);
-        grid.add(yearOfPublication, 1, 9);
-
-        Text iS = new Text(" ISBN : ");
-        iS.setFont(myFont);
-        iS.setWrappingWidth(150);
-        iS.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(iS, 0, 10);
-
-        isbn = new TextField();
-        isbn.setEditable(true);
-        grid.add(isbn, 1, 10);
-
-        Text con = new Text(" Quality : ");
-        con.setFont(myFont);
-        con.setWrappingWidth(150);
-        con.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(con, 0, 11);
-
-        quality = new ComboBox();
-        quality.getItems().addAll(
-                "Good",
-                "Damaged"
-        );
-
-        quality.setValue("Good");
-        grid.add(quality, 1, 11);
-
-        Text sug = new Text(" Suggested Price : ");
-        sug.setFont(myFont);
-        sug.setWrappingWidth(150);
-        sug.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(sug, 0, 12);
-
-        suggestedPrice = new TextField();
-        suggestedPrice.setEditable(true);
-        grid.add(suggestedPrice, 1, 12);
-
-        Text not = new Text(" Notes : ");
-        not.setFont(myFont);
-        not.setWrappingWidth(150);
-        not.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(not, 0, 13);
-
-        notes = new TextField();
-        notes.setEditable(true);
-        grid.add(notes, 1, 13);
-
-        Text bStatus = new Text(" Book's Status : ");
-        bStatus.setFont(myFont);
-        bStatus.setWrappingWidth(150);
-        bStatus.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(bStatus, 0, 14);
+        pubYear = new TextField();
+        pubYear.setEditable(true);
+        grid.add(pubYear, 1, 3);
 
         status = new ComboBox();
         status.getItems().addAll(
@@ -273,183 +160,110 @@ public class AddBookView<pubilc> extends View{
         );
 
         status.setValue("Active");
-        grid.add(status, 1, 14);
+        grid.add(status, 1, 4);
 
-        submitButton = new Button("Submit");
-        submitButton.setOnAction(new EventHandler<ActionEvent>() {
+
+        HBox doneCont = new HBox(10);
+        doneCont.setAlignment(Pos.CENTER);
+        subButton = new Button("Submit");
+        subButton.setFont(Font.font("Arial", FontWeight.BOLD, 14));
+        subButton.setOnAction(new EventHandler<ActionEvent>() {
+
             @Override
             public void handle(ActionEvent e) {
+                clearErrorMessage();
                 processAction(e);
             }
         });
 
-        cancelButton = new Button("Back");
-        cancelButton.setOnAction(new EventHandler<ActionEvent>() {
+        doneButton = new Button("Back");
+        doneButton.setFont(Font.font("Arial", FontWeight.BOLD, 14));
+        doneButton.setOnAction(new EventHandler<ActionEvent>() {
+
             @Override
             public void handle(ActionEvent e) {
+                clearErrorMessage();
                 myModel.stateChangeRequest("CancelTransaction", null);
             }
         });
+        doneCont.getChildren().add(subButton);
+        doneCont.getChildren().add(doneButton);
 
-        HBox buttonCont = new HBox(10);
-        buttonCont.setAlignment(Pos.CENTER);
-        buttonCont.getChildren().add(submitButton);
-        Label space = new Label("               ");
-        buttonCont.setAlignment(Pos.CENTER);
-        buttonCont.getChildren().add(space);
-        buttonCont.setAlignment(Pos.CENTER);
-        buttonCont.getChildren().add(cancelButton);
         vbox.getChildren().add(grid);
-        vbox.getChildren().add(buttonCont);
+        vbox.getChildren().add(doneCont);
 
         return vbox;
-    }
-
-    private void processAction(ActionEvent e) {
-
-        clearErrorMessage();
-
-        String bar = barcode.getText();
-        String titl = title.getText();
-        String disi = (String)discipline.getValue();
-        String au1 = author1.getText();
-        String au2 = author2.getText();
-        String au3 = author3.getText();
-        String au4 = author4.getText();
-        String publi = publisher.getText();
-        String yeaO = yearOfPublication.getText();
-        String isb = isbn.getText();
-        String condi = (String)quality.getValue();
-        String sugPric = suggestedPrice.getText();
-        String no = notes.getText();
-        String sta = (String)status.getValue();
-
-        Properties p2 = new Properties();
-        p2.setProperty("barcode", bar);
-        p2.setProperty("title", titl);
-        p2.setProperty("discipline", disi);
-        p2.setProperty("author1", au1);
-        p2.setProperty("author2", au2);
-        p2.setProperty("author3", au3);
-        p2.setProperty("author4", au4);
-        p2.setProperty("publisher", publi);
-        p2.setProperty("yearOfPublication", yeaO);
-        p2.setProperty("isbn", isb);
-        p2.setProperty("quality", condi);
-        p2.setProperty("suggestedPrice", sugPric);
-        p2.setProperty("notes", no);
-        p2.setProperty("status", sta);
-
-        try {
-            myModel.stateChangeRequest("InsertBook", p2);
-            databaseUpdated();
-        }catch(Exception z){
-            databaseError();
-        }
-
-        barcode.clear();
-        title.clear();
-        author1.clear();
-        author2.clear();
-        author3.clear();
-        author4.clear();
-        publisher.clear();
-        yearOfPublication.clear();
-        isbn.clear();
-        suggestedPrice.clear();
-        notes.clear();
-
-        discipline.setValue("None");
-        quality.setValue("Good");
-        status.setValue("Active");
-
     }
 
 
     // Create the status log field
     //-------------------------------------------------------------
-    protected MessageView createStatusLog(String initialMessage)
+    private MessageView createStatusLog(String initialMessage)
     {
+
         statusLog = new MessageView(initialMessage);
 
         return statusLog;
     }
 
     //-------------------------------------------------------------
+
     public void populateFields()
     {
-       /* accountNumber.setText((String)myModel.getState("AccountNumber"));
-        acctType.setText((String)myModel.getState("Type"));
-        balance.setText((String)myModel.getState("Balance"));
-        serviceCharge.setText((String)myModel.getState("ServiceCharge"));
 
-        */
     }
 
-    /**
-     * Update method
-     */
+    // This method processes events generated from our GUI components.
+    // Make the ActionListeners delegate to this method
+    //-------------------------------------------------------------
+
+    public void processAction(Event evt)
+    {
+        // DEBUG: System.out.println("TellerView.actionPerformed()");
+        String author = newAuthor.getText();
+        String title = newTitle.getText();
+        String pub = pubYear.getText();
+        String stat = (String) status.getValue();
+
+        Properties p1 = new Properties();
+        p1.setProperty("bookTitle", title);
+        p1.setProperty("author", author);
+        p1.setProperty("pubYear", pub);
+        p1.setProperty("status", stat);
+
+        Book bk1 = new Book(p1);
+        bk1.update();
+    }
+
+
+
     //---------------------------------------------------------
     public void updateState(String key, Object value)
     {
-        clearErrorMessage();
+        // STEP 6: Be sure to finish the end of the 'perturbation'
+        // by indicating how the view state gets updated.
 
-        if (key.equals("PopulateAddBookMessage") == true)
-        {
-            displayMessage((String)value);
-        }
+
     }
 
     /**
      * Display error message
      */
     //----------------------------------------------------------
+
     public void displayErrorMessage(String message)
     {
         statusLog.displayErrorMessage(message);
     }
 
     /**
-     * Display info message
-     */
-    //----------------------------------------------------------
-    public void displayMessage(String message)
-    {
-        statusLog.displayMessage(message);
-    }
-
-    /**
      * Clear error message
      */
     //----------------------------------------------------------
+
     public void clearErrorMessage()
     {
         statusLog.clearErrorMessage();
     }
 
-    public void databaseUpdated(){
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Database");
-        alert.setHeaderText(null);
-        alert.setHeaderText("Book Added to Database");
-
-        alert.showAndWait();
-    }
-
-    public void databaseError(){
-
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Database");
-        alert.setHeaderText("Ooops, there was an issue adding to the database!");
-        alert.setContentText("Please make sure all fields are filled out correctly.");
-
-        alert.showAndWait();
-    }
 }
-
-//---------------------------------------------------------------
-//	Revision History:
-//
-
-

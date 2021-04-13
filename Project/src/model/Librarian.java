@@ -20,7 +20,6 @@ import userinterface.MainStageContainer;
 import userinterface.View;
 import userinterface.ViewFactory;
 import userinterface.WindowPosition;
-import model.StudentBorrower;
 
 /** The class containing the Teller  for the ATM application */
 //==============================================================
@@ -33,8 +32,9 @@ public class Librarian implements IView, IModel
     private Properties dependencies;
     private ModelRegistry myRegistry;
 
+    private Worker workerSearch;
     private Worker worker;
-    private Book book;
+    private WorkerCollection wc;
 
 
     // GUI Components
@@ -136,53 +136,38 @@ public class Librarian implements IView, IModel
             }
         }
         else
+        if (key.equals("SelectWorkerView") == true)
+        {
+            try {
+                System.out.println("Its hitting here");
+                searchWorkers((String)value);
+            } catch (InvalidPrimaryKeyException e) {
+                e.printStackTrace();
+            }
+        }
+        else
         if (key.equals("AddWorker") == true)
         {
             createAndShowAddWorkerView();
         }
         else
-        if (key.equals("AddBook") == true)
+        if (key.equals("SearchWorker") == true)
         {
-            createAndShowAddBookView();
+            createAndShowWorkerBannerIdView();
         }
         else
-        if (key.equals("AddStudentBorrower") == true)
-        {
-            createAndShowAddStudentBorrowerView();
-        }
-        else
-
-        if (key.equals("InsertBook") == true)
-        {
-            try {
-                insertBook((Properties)value);
-            } catch (InvalidPrimaryKeyException e) {
-                Book insertedBook = new Book((Properties)value);
-                insertedBook.update();
-            }
-        }
-        else
-
         if (key.equals("insertWorker") == true)
         {
             try {
+                System.out.println("It is hitting here");
                 insertWorker((Properties)value);
                 } catch (InvalidPrimaryKeyException e) {
+                System.out.println("It is hitting here too");
                 Worker insertedWorker = new Worker((Properties)value);
                 insertedWorker.update();
             }
 
         }
-        if (key.equals("AddStudent") == true)
-        {
-        try {
-            insertStudent((Properties)value);
-        } catch (InvalidPrimaryKeyException e) {
-            StudentBorrower insertedStudent = new StudentBorrower((Properties)value);
-            insertedStudent.update();
-        }
-
-         }
         else
         if (key.equals("CancelTransaction") == true)
         {
@@ -264,6 +249,24 @@ public class Librarian implements IView, IModel
 
     }
 
+    private void createAndShowWorkerBannerIdView()
+    {
+        Scene currentScene = (Scene)myViews.get("WorkerBannerIdView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("WorkerBannerIdView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("WorkerBannerIdView", currentScene);
+        }
+
+
+        // make the view visible by installing it into the frame
+        swapToView(currentScene);
+
+    }
+
     private void createAndShowAddWorkerView()
     {
         Scene currentScene = (Scene)myViews.get("AddWorkerView");
@@ -277,40 +280,6 @@ public class Librarian implements IView, IModel
         }
 
 
-        // make the view visible by installing it into the frame
-        swapToView(currentScene);
-
-    }
-
-    private void createAndShowAddBookView()
-    {
-        Scene currentScene = (Scene)myViews.get("AddBookView");
-
-        if (currentScene == null)
-        {
-            // create our initial view
-            View newView = ViewFactory.createView("AddBookView", this); // USE VIEW FACTORY
-            currentScene = new Scene(newView);
-            myViews.put("AddBookView", currentScene);
-        }
-
-
-        // make the view visible by installing it into the frame
-        swapToView(currentScene);
-
-    }
-
-    private void createAndShowAddStudentBorrowerView()
-    {
-        Scene currentScene = (Scene)myViews.get("AddStudentBorrowerView");
-
-        if (currentScene == null)
-        {
-            // create our initial view
-            View newView = ViewFactory.createView("AddStudentBorrowerView", this); // USE VIEW FACTORY
-            currentScene = new Scene(newView);
-            myViews.put("AddStudentBorrowerView", currentScene);
-        }
         // make the view visible by installing it into the frame
         swapToView(currentScene);
 
@@ -345,6 +314,28 @@ public class Librarian implements IView, IModel
 
         swapToView(currentScene);
 
+    }
+
+    private void createAndShowWorkerSelectionView()
+    {
+        Scene currentScene = (Scene)myViews.get("WorkerSelectionView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("WorkerSelectionView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("WorkerSelectionView", currentScene);
+        }
+
+        swapToView(currentScene);
+
+    }
+
+    private void searchWorkers(String z) throws InvalidPrimaryKeyException {
+        System.out.println("its absolutely hitting here");
+        workerSearch = new Worker(z);
+        createAndShowWorkerSelectionView();
     }
 
 
@@ -394,13 +385,5 @@ public class Librarian implements IView, IModel
         Worker n = new Worker(bannerId);
     }
 
-    public void insertBook(Properties p) throws InvalidPrimaryKeyException {
-        String barcode = p.getProperty("barcode");
-        Book b = new Book(barcode);
-    }
 
-    public void insertStudent(Properties p) throws InvalidPrimaryKeyException {
-        String bannerId = p.getProperty("bannerId");
-        StudentBorrower b = new StudentBorrower(bannerId);
-    }
 }

@@ -161,13 +161,13 @@ public class TransactionChoiceView extends View
 
 		HBox biCont = new HBox(10);
 		biCont.setAlignment(Pos.CENTER);
-		balanceInquiryButton = new Button("Balance Inquiry");
+		balanceInquiryButton = new Button("Search for Worker");
 		balanceInquiryButton.setFont(Font.font("Arial", FontWeight.BOLD, 14));
 		balanceInquiryButton.setOnAction(new EventHandler<ActionEvent>() {
 
        		     @Override
        		     public void handle(ActionEvent e) {
-       		     	myModel.stateChangeRequest("BalanceInquiry", null);    
+       		     	myModel.stateChangeRequest("SearchWorker", null);
             	     }
         	});
 		biCont.getChildren().add(balanceInquiryButton);

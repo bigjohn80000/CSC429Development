@@ -9,7 +9,10 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -24,6 +27,7 @@ import java.util.Properties;
 
 // project imports
 import impresario.IModel;
+import model.Patron;
 
 /** The class containing the Account View  for the ATM application */
 //==============================================================
@@ -51,9 +55,9 @@ public class AddStudentBorrowerView extends View
 
     // constructor for this class -- takes a model object
     //----------------------------------------------------------
-    public AddStudentBorrowerView(IModel librarian)
+    public PatronView(IModel studentBorrower)
     {
-        super(librarian, "AddStudentBorrowerView");
+        super(StudentBorrower, "AddStudentBorrowerView");
 
         // create a container for showing the contents
         VBox container = new VBox(10);
@@ -119,30 +123,30 @@ public class AddStudentBorrowerView extends View
         banID.setTextAlignment(TextAlignment.RIGHT);
         grid.add(banID, 0, 1);
 
-        bannerId = new TextField();
-        bannerId.setEditable(true);
-        grid.add(bannerId, 1, 1);
+        firstName = new TextField();
+        firsName.setEditable(true);
+        grid.add(firsName, 1, 1);
 
         Text firsName = new Text("Students First Name : ");
-        myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
+        Font myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
         firsName.setFont(myFont);
         firsName.setWrappingWidth(150);
         firsName.setTextAlignment(TextAlignment.RIGHT);
         grid.add(firsName, 0, 2);
 
         firstName = new TextField();
-        firstName.setEditable(true);
-        grid.add(firstName, 1, 2);
+        firsName.setEditable(true);
+        grid.add(firsName, 1, 2);
 
         Text lasName = new Text(" Students Last Name: ");
-        myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
+        Font myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
         lasName.setFont(myFont);
         lasName.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(lasName,0,3);
+        grid.add(lasName,0,3)
 
-        lastName = new TextField();
-        lastName.setEditable(true);
-        grid.add(lastName,1,3);
+        lasName = new TextField();
+        lasName.setEditable(true);
+        grid.add(lasName,1,3);
 
 
         Text contactPhon = new Text(" Students Contact Phone Number : ");
@@ -171,12 +175,13 @@ public class AddStudentBorrowerView extends View
         borrowersta.setTextAlignment(TextAlignment.RIGHT);
         grid.add(borrowersta, 0, 6);
 
-        borrowerStatus = new ComboBox();
+        borrowerStatus = new ComboBox()
         borrowerStatus.getItems().addAll(
                 "Good Standing",
                 "Delinquent"
         );
         borrowerStatus.setValue("Good Standing");
+        borrowerStatus.setEditable(true);
         grid.add(borrowerStatus, 1, 6);
 
         Text dateOfLate = new Text(" Students Date Of Latest Borrowing Status : ");
@@ -215,14 +220,15 @@ public class AddStudentBorrowerView extends View
         sta.setTextAlignment(TextAlignment.RIGHT);
         grid.add(sta, 0, 10);
 
-        status = new ComboBox();
+        status = new ComboBox()
         status.getItems().addAll(
                 "Active",
                 "Inactive"
         );
-
         status.setValue("Active");
+        status.setEditable(true);
         grid.add(status, 1, 10);
+
 
 
 
@@ -230,7 +236,24 @@ public class AddStudentBorrowerView extends View
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
+
+                databaseUpdated();
+
+                bannerId.clear();
+                firsName.clear();
+                lastName.clear();
+                contactPhone.clear();
+                email.clear();
+                borrowerStatus.clear();
+                dateOfLatestBorrowerStatus.clear();
+                dateOfRegistration.clear();
+                notes.clear();
+
+                borrowerStatus.setValue("Good Standing");
+                status.setValue("Active");
+
                 processAction(e);
+
             }
         });
 
@@ -265,11 +288,11 @@ public class AddStudentBorrowerView extends View
         String last = lastName.getText();
         String phone = contactPhone.getText();
         String eml = email.getText();
-        String borrowerStat = (String)borrowerStatus.getValue();
+        String borrowerStat = (String)borrowerStatus.getvalue();
         String dateOfLatest = dateOfLatestBorrowerStatus.getText();
         String dateOfReg = dateOfRegistration.getText();
         String note = notes.getText();
-        String stat = (String)status.getValue();
+        String stat = (String)status.getvalue();
 
         Properties p2 = new Properties();
         p2.setProperty("bannerId",banid);
@@ -283,23 +306,8 @@ public class AddStudentBorrowerView extends View
         p2.setProperty("notes", note);
         p2.setProperty("status", stat);
 
-        try {
-            myModel.stateChangeRequest("AddStudent", p2);
-            databaseUpdated();
-        }catch(Exception z){
-            databaseError();
-        }
-        bannerId.clear();
-        firstName.clear();
-        lastName.clear();
-        contactPhone.clear();
-        email.clear();
-        dateOfLatestBorrowerStatus.clear();
-        dateOfRegistration.clear();
-        notes.clear();
-        borrowerStatus.setValue("Good Standing");
-        status.setValue("Active");
-
+        Patron pat1 = new Patron(p2);
+        pat1.update();
     }
 
 
@@ -370,16 +378,6 @@ public class AddStudentBorrowerView extends View
         alert.setTitle("Database");
         alert.setHeaderText(null);
         alert.setHeaderText("Student Borrower Added To Database");
-
-        alert.showAndWait();
-    }
-
-    public void databaseError(){
-
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Database");
-        alert.setHeaderText("Ooops, there was an issue adding to the database!");
-        alert.setContentText("Please make sure all fields are filled out correctly.");
 
         alert.showAndWait();
     }
