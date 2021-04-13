@@ -15,6 +15,11 @@ public class ViewFactory {
 		{
 			return new TransactionChoiceView(model);
 		}
+		else if(viewName.equals("AddStudentBorrowerView") == true)
+		{
+			return new AddStudentBorrowerView(model);
+		}
+
 		else if(viewName.equals("AccountCollectionView") == true)
 		{
 			return new AccountCollectionView(model);

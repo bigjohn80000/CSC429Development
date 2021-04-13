@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7657e061-d5d7-4c48-9621-b0457191e6f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/Library.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/src/userinterface/AddStudentBorrowerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/AddStudentBorrowerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/ViewFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +65,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618278857157</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added AddStudentBorrowerView.java WIP still working">
+      <created>1618280364192</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618280364192</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -76,7 +83,8 @@
     <MESSAGE value="updated dbConfig.ini with hunters database config" />
     <MESSAGE value="added addBookView.java still in process of making it work" />
     <MESSAGE value="added AddStudentBorrowerView.java still in process of making it work" />
-    <option name="LAST_COMMIT_MESSAGE" value="added AddStudentBorrowerView.java still in process of making it work" />
+    <MESSAGE value="added AddStudentBorrowerView.java WIP still working" />
+    <option name="LAST_COMMIT_MESSAGE" value="added AddStudentBorrowerView.java WIP still working" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CSC429Development$Library.ic" NAME="Library Coverage Results" MODIFIED="1617932504544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

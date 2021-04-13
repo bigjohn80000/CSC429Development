@@ -35,7 +35,7 @@ public class AddStudentBorrowerView extends View
 {
 
     // GUI components
-    protected  TextField bannerId;
+    protected TextField bannerId;
     protected TextField firstName;
     protected TextField lastName;
     protected TextField contactPhone;
