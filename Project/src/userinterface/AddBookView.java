@@ -340,7 +340,12 @@ public class AddBookView<pubilc> extends View{
         p2.setProperty("notes", no);
         p2.setProperty("status", sta);
 
-        myModel.stateChangeRequest("InsertBook", p2);
+        try {
+            myModel.stateChangeRequest("InsertBook", p2);
+            databaseUpdated();
+        }catch(Exception z){
+            databaseError();
+        }
 
         barcode.clear();
         title.clear();
@@ -358,7 +363,6 @@ public class AddBookView<pubilc> extends View{
         quality.setValue("Good");
         status.setValue("Active");
 
-        databaseUpdated();
     }
 
 
@@ -429,6 +433,16 @@ public class AddBookView<pubilc> extends View{
         alert.setTitle("Database");
         alert.setHeaderText(null);
         alert.setHeaderText("Book Added to Database");
+
+        alert.showAndWait();
+    }
+
+    public void databaseError(){
+
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Database");
+        alert.setHeaderText("Ooops, there was an issue adding to the database!");
+        alert.setContentText("Please make sure all fields are filled out correctly.");
 
         alert.showAndWait();
     }

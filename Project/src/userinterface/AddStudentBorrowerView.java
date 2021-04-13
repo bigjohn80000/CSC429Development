@@ -283,8 +283,12 @@ public class AddStudentBorrowerView extends View
         p2.setProperty("notes", note);
         p2.setProperty("status", stat);
 
-        myModel.stateChangeRequest("AddStudent", p2);
-
+        try {
+            myModel.stateChangeRequest("AddStudent", p2);
+            databaseUpdated();
+        }catch(Exception z){
+            databaseError();
+        }
         bannerId.clear();
         firstName.clear();
         lastName.clear();
@@ -296,7 +300,6 @@ public class AddStudentBorrowerView extends View
         borrowerStatus.setValue("Good Standing");
         status.setValue("Active");
 
-        databaseUpdated();
     }
 
 

@@ -271,7 +271,12 @@ public class AddWorkerView extends View{
         p1.setProperty("dateOfHire", dateHire);
         p1.setProperty("status", stat);
 
-        myModel.stateChangeRequest("insertWorker", p1);
+        try {
+            myModel.stateChangeRequest("insertWorker", p1);
+            databaseUpdated();
+        }catch(Exception z){
+            databaseError();
+        }
 
         bannerId.clear();
         password.clear();
@@ -283,9 +288,6 @@ public class AddWorkerView extends View{
         dOLC.clear();
         doh.clear();
         status.setValue("Active");
-
-        databaseUpdated();
-
     }
 
 
@@ -356,6 +358,16 @@ public class AddWorkerView extends View{
         alert.setTitle("Database");
         alert.setHeaderText(null);
         alert.setHeaderText("Worker Added to Database");
+
+        alert.showAndWait();
+    }
+
+    public void databaseError(){
+
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Database");
+        alert.setHeaderText("Ooops, there was an issue adding to the database!");
+        alert.setContentText("Please make sure all fields are filled out correctly.");
 
         alert.showAndWait();
     }

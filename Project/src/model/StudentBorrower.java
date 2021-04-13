@@ -18,7 +18,7 @@ public class StudentBorrower extends EntityBase {
         this.setDependencies();
         String query = "SELECT * FROM " + myTableName + " WHERE (bannerId = " + bannerId + ")";
         Vector allDataFromDB = this.getSelectQueryResult(query);
-        if (allDataFromDB != null) {
+        if (allDataFromDB.isEmpty() == false) {
             int dataLen = allDataFromDB.size();
             if (dataLen != 1) {
                 throw new InvalidPrimaryKeyException("Multiple StudentBorrowerIds matching id : " + bannerId + " found.");
