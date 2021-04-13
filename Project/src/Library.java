@@ -27,11 +27,11 @@ public class Library extends Application
     //----------------------------------------------------------
     public void start(Stage primaryStage)
     {
-        System.out.println("Library Version 7.00");
-        System.out.println("Copyright 2000/2021 Kyle Adams the SMARTEST!");
+        System.out.println("Library Version 8.00");
+        System.out.println("Copyright 2021 Hunter,Zach,John");
 
         // Create the top-level container (main frame) and add contents to it.
-        MainStageContainer.setStage(primaryStage, "Brockport Library Version 7.00");
+        MainStageContainer.setStage(primaryStage, "Brockport Library Version 8.00");
         mainStage = MainStageContainer.getInstance();
 
         // Finish setting up the stage (ENABLE THE GUI TO BE CLOSED USING THE TOP RIGHT
