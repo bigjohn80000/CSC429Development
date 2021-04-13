@@ -145,6 +145,12 @@ public class Librarian implements IView, IModel
             createAndShowAddBookView();
         }
         else
+        if (key.equals("AddStudentBorrowerView") == true)
+        {
+            createAndShowAddStudentBorrowerView();
+        }
+        else
+
         if (key.equals("InsertBook") == true)
         {
             try {
@@ -278,6 +284,22 @@ public class Librarian implements IView, IModel
         }
 
 
+        // make the view visible by installing it into the frame
+        swapToView(currentScene);
+
+    }
+
+    private void createAndShowAddStudentBorrowerView()
+    {
+        Scene currentScene = (Scene)myViews.get("AddStudentBorrowerView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("AddStudentBorrowerView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("AddStudentBorrowerView", currentScene);
+        }
         // make the view visible by installing it into the frame
         swapToView(currentScene);
 

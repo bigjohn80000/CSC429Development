@@ -14,6 +14,10 @@ public class ViewFactory {
 		{
 			return new AddWorkerView(model);
 		}
+		else if(viewName.equals("AddStudentBorrowerView") == true)
+		{
+			return new AddStudentBorrowerView(model);
+		}
 		else if(viewName.equals("AddBookView") == true)
 		{
 			return new AddBookView(model);
