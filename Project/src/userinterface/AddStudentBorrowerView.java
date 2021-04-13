@@ -149,65 +149,87 @@ public class AddStudentBorrowerView extends View
         grid.add(lasName,1,3);
 
 
-        Text patAddress = new Text(" Patron's Address : ");
-        patAddress.setFont(myFont);
-        patAddress.setWrappingWidth(150);
-        patAddress.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(patAddress, 0, 2);
+        Text contactPhon = new Text(" Students Contact Phone Number : ");
+        contactPhon.setFont(myFont);
+        contactPhon.setWrappingWidth(150);
+        contactPhon.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(contactPhon, 0, 4);
 
-        address = new TextField();
-        address.setEditable(true);
-        grid.add(address, 1, 2);
+        contactPhone = new TextField();
+        contactPhone.setEditable(true);
+        grid.add(contactPhone, 1, 4);
 
-        Text patCity = new Text(" Patron's City : ");
-        patCity.setFont(myFont);
-        patCity.setWrappingWidth(150);
-        patCity.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(patCity, 0, 3);
-
-        city = new TextField();
-        city.setEditable(true);
-        grid.add(city, 1, 3);
-
-        Text patState = new Text(" Patron's State : ");
-        patState.setFont(myFont);
-        patState.setWrappingWidth(150);
-        patState.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(patState, 0, 4);
-
-        state= new TextField();
-        state.setEditable(true);
-        grid.add(state, 1, 4);
-
-        Text patZip = new Text(" Patron's Zipcode : ");
-        patZip.setFont(myFont);
-        patZip.setWrappingWidth(150);
-        patZip.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(patZip, 0, 5);
-
-        zipcode = new TextField();
-        zipcode.setEditable(true);
-        grid.add(zipcode, 1, 5);
-
-        Text patEmail = new Text(" Patron's Email : ");
-        patEmail.setFont(myFont);
-        patEmail.setWrappingWidth(150);
-        patEmail.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(patEmail, 0, 6);
+        Text emai = new Text(" Students Email Address : ");
+        emai.setFont(myFont);
+        emai.setWrappingWidth(150);
+        emai.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(emai, 0, 5);
 
         email = new TextField();
         email.setEditable(true);
-        grid.add(email, 1, 6);
+        grid.add(email, 1, 5);
 
-        Text patDOB = new Text(" Patron's Date of Birth : ");
-        patDOB.setFont(myFont);
-        patDOB.setWrappingWidth(150);
-        patDOB.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(patDOB, 0, 7);
+        Text borrowersta = new Text(" Students Borrower Status : ");
+        borrowersta.setFont(myFont);
+        borrowersta.setWrappingWidth(150);
+        borrowersta.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(borrowersta, 0, 6);
 
-        dob = new TextField();
-        dob.setEditable(true);
-        grid.add(dob, 1, 7);
+        borrowerStatus = new ComboBox()
+        borrowerStatus.getItems().addAll(
+                "Good Standing",
+                "Delinquent"
+        );
+        borrowerStatus.setValue("Good Standing");
+        borrowerStatus.setEditable(true);
+        grid.add(borrowerStatus, 1, 6);
+
+        Text dateOfLate = new Text(" Students Date Of Latest Borrowing Status : ");
+        dateOfLate.setFont(myFont);
+        dateOfLate.setWrappingWidth(150);
+        dateOfLate.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(dateOfLate, 0, 7);
+
+        dateOfLatestBorrowerStatus = new TextField();
+        dateOfLatestBorrowerStatus.setEditable(true);
+        grid.add(dateOfLatestBorrowerStatus, 1, 7);
+
+        Text dateOfReg = new Text(" Students Date Of Registration : ");
+        dateOfReg.setFont(myFont);
+        dateOfReg.setWrappingWidth(150);
+        dateOfReg.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(dateOfReg, 0, 8);
+
+        dateOfRegistration = new TextField();
+        dateOfRegistration.setEditable(true);
+        grid.add(dateOfRegistration, 1, 8);
+
+        Text not = new Text(" Notes : ");
+        not.setFont(myFont);
+        not.setWrappingWidth(150);
+        not.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(not, 0, 9);
+
+        notes = new TextField();
+        notes.setEditable(true);
+        grid.add(notes, 1, 9);
+
+        Text sta = new Text(" Students Borrower Status : ");
+        sta.setFont(myFont);
+        sta.setWrappingWidth(150);
+        sta.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(sta, 0, 10);
+
+        status = new ComboBox()
+        status.getItems().addAll(
+                "Active",
+                "Inactive"
+        );
+        status.setValue("Active");
+        status.setEditable(true);
+        grid.add(status, 1, 10);
+
+
 
 
         submitButton = new Button("Submit");
@@ -255,26 +277,19 @@ public class AddStudentBorrowerView extends View
         String note = notes.getText();
         String stat = (String)status.getvalue();
 
-
-
-        String patron = name.getText();
-        String pAddress = address.getText();
-        String cty = city.getText();
-        String zip = zipcode.getText();
-        String st = state.getText();
-        String eml = email.getText();
-        String date = dob.getText();
-
         Properties p2 = new Properties();
-        p2.setProperty("name", patron);
-        p2.setProperty("address", pAddress);
-        p2.setProperty("city", cty);
-        p2.setProperty("stateCode", st);
-        p2.setProperty("zip", zip);
+        p2.setProperty("bannerId",banid);
+        p2.setProperty("firstName", first);
+        p2.setProperty("lastName", last);
+        p2.setProperty("contactPhone", phone);
         p2.setProperty("email", eml);
-        p2.setProperty("dateOfBirth", date);
+        p2.setProperty("borrowerStatus", borrowerStat);
+        p2.setProperty("dateOfLatestBorrowerStatus", dateOfLatest);
+        p2.setProperty("dateOfRegistration", dateOfReg);
+        p2.setProperty("notes", note);
+        p2.setProperty("status", stat);
 
-        Patron pat1 = new Patron(p1);
+        Patron pat1 = new Patron(p2);
         pat1.update();
     }
 
