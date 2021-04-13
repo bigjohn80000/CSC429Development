@@ -11,6 +11,7 @@ public class StudentBorrower extends EntityBase {
     private static final String myTableName = "StudentBorrower";
     protected Properties dependencies;
     private String updateStatusMessage = "Table was updated successfully";
+    private boolean exists = true;
 
     public StudentBorrower(String bannerId) throws InvalidPrimaryKeyException {
         super(myTableName);
@@ -33,7 +34,7 @@ public class StudentBorrower extends EntityBase {
                         this.persistentState.setProperty(nextKey, nextValue);
                     }
                 }
-
+                exists = true;
             }
         } else {
             throw new InvalidPrimaryKeyException("No StudentBorrower matching id : " + bannerId + " found.");
@@ -53,9 +54,10 @@ public class StudentBorrower extends EntityBase {
                 this.persistentState.setProperty(one, two);
             }
         }
+        exists = false;
     }
 
-    public StudentBorrower() {
+    public StudentBorrower() { exists = false;
     }
 
     private void setDependencies(){
@@ -95,7 +97,7 @@ public class StudentBorrower extends EntityBase {
     {
         try
         {
-            if (persistentState.getProperty("bannerId") != null)
+            if (exists == true)
             {
 
                 Properties whereClause = new Properties();

@@ -20,6 +20,7 @@ import userinterface.MainStageContainer;
 import userinterface.View;
 import userinterface.ViewFactory;
 import userinterface.WindowPosition;
+import model.StudentBorrower;
 
 /** The class containing the Teller  for the ATM application */
 //==============================================================
@@ -145,7 +146,7 @@ public class Librarian implements IView, IModel
             createAndShowAddBookView();
         }
         else
-        if (key.equals("AddStudentBorrowerView") == true)
+        if (key.equals("AddStudentBorrower") == true)
         {
             createAndShowAddStudentBorrowerView();
         }
@@ -172,6 +173,16 @@ public class Librarian implements IView, IModel
             }
 
         }
+        if (key.equals("AddStudent") == true)
+        {
+        try {
+            insertStudent((Properties)value);
+        } catch (InvalidPrimaryKeyException e) {
+            StudentBorrower insertedStudent = new StudentBorrower((Properties)value);
+            insertedStudent.update();
+        }
+
+         }
         else
         if (key.equals("CancelTransaction") == true)
         {
@@ -386,5 +397,10 @@ public class Librarian implements IView, IModel
     public void insertBook(Properties p) throws InvalidPrimaryKeyException {
         String barcode = p.getProperty("barcode");
         Book b = new Book(barcode);
+    }
+
+    public void insertStudent(Properties p) throws InvalidPrimaryKeyException {
+        String bannerId = p.getProperty("bannerId");
+        StudentBorrower b = new StudentBorrower(bannerId);
     }
 }

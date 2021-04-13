@@ -51,9 +51,9 @@ public class AddStudentBorrowerView extends View
 
     // constructor for this class -- takes a model object
     //----------------------------------------------------------
-    public AddStudentBorrowerView(IModel studentBorrower)
+    public AddStudentBorrowerView(IModel librarian)
     {
-        super(studentBorrower, "AddStudentBorrowerView");
+        super(librarian, "AddStudentBorrowerView");
 
         // create a container for showing the contents
         VBox container = new VBox(10);
@@ -119,9 +119,9 @@ public class AddStudentBorrowerView extends View
         banID.setTextAlignment(TextAlignment.RIGHT);
         grid.add(banID, 0, 1);
 
-        firstName = new TextField();
-        firstName.setEditable(true);
-        grid.add(firstName, 1, 1);
+        bannerId = new TextField();
+        bannerId.setEditable(true);
+        grid.add(bannerId, 1, 1);
 
         Text firsName = new Text("Students First Name : ");
         myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
@@ -142,7 +142,7 @@ public class AddStudentBorrowerView extends View
 
         lastName = new TextField();
         lastName.setEditable(true);
-        grid.add(lasName,1,3);
+        grid.add(lastName,1,3);
 
 
         Text contactPhon = new Text(" Students Contact Phone Number : ");
@@ -177,7 +177,6 @@ public class AddStudentBorrowerView extends View
                 "Delinquent"
         );
         borrowerStatus.setValue("Good Standing");
-        borrowerStatus.setEditable(true);
         grid.add(borrowerStatus, 1, 6);
 
         Text dateOfLate = new Text(" Students Date Of Latest Borrowing Status : ");
@@ -221,10 +220,9 @@ public class AddStudentBorrowerView extends View
                 "Active",
                 "Inactive"
         );
-        status.setValue("Active");
-        status.setEditable(true);
-        grid.add(status, 1, 10);
 
+        status.setValue("Active");
+        grid.add(status, 1, 10);
 
 
 
@@ -232,23 +230,7 @@ public class AddStudentBorrowerView extends View
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-
-                databaseUpdated();
-
-                bannerId.clear();
-                firstName.clear();
-                lastName.clear();
-                contactPhone.clear();
-                email.clear();
-                dateOfLatestBorrowerStatus.clear();
-                dateOfRegistration.clear();
-                notes.clear();
-
-                borrowerStatus.setValue("Good Standing");
-                status.setValue("Active");
-
                 processAction(e);
-
             }
         });
 
@@ -302,6 +284,19 @@ public class AddStudentBorrowerView extends View
         p2.setProperty("status", stat);
 
         myModel.stateChangeRequest("AddStudent", p2);
+
+        bannerId.clear();
+        firstName.clear();
+        lastName.clear();
+        contactPhone.clear();
+        email.clear();
+        dateOfLatestBorrowerStatus.clear();
+        dateOfRegistration.clear();
+        notes.clear();
+        borrowerStatus.setValue("Good Standing");
+        status.setValue("Active");
+
+        databaseUpdated();
     }
 
 
@@ -372,6 +367,16 @@ public class AddStudentBorrowerView extends View
         alert.setTitle("Database");
         alert.setHeaderText(null);
         alert.setHeaderText("Student Borrower Added To Database");
+
+        alert.showAndWait();
+    }
+
+    public void databaseError(){
+
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Database");
+        alert.setHeaderText("Ooops, there was an issue adding to the database!");
+        alert.setContentText("Please make sure all fields are filled out correctly.");
 
         alert.showAndWait();
     }

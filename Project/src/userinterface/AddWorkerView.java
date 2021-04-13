@@ -218,22 +218,7 @@ public class AddWorkerView extends View{
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-
-                databaseUpdated();
-
-                bannerId.clear();
-                password.clear();
-                first.clear();
-                last.clear();
-                phone.clear();
-                email.clear();
-                cred.setValue("Ordinary");
-                dOLC.clear();
-                doh.clear();
-                status.setValue("Active");
-
                 processAction(e);
-
             }
         });
 
@@ -287,6 +272,19 @@ public class AddWorkerView extends View{
         p1.setProperty("status", stat);
 
         myModel.stateChangeRequest("insertWorker", p1);
+
+        bannerId.clear();
+        password.clear();
+        first.clear();
+        last.clear();
+        phone.clear();
+        email.clear();
+        cred.setValue("Ordinary");
+        dOLC.clear();
+        doh.clear();
+        status.setValue("Active");
+
+        databaseUpdated();
 
     }
 

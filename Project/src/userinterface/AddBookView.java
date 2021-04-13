@@ -279,27 +279,7 @@ public class AddBookView<pubilc> extends View{
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
-
-                databaseUpdated();
-
-                barcode.clear();
-                title.clear();
-                author1.clear();
-                author2.clear();
-                author3.clear();
-                author4.clear();
-                publisher.clear();
-                yearOfPublication.clear();
-                isbn.clear();
-                suggestedPrice.clear();
-                notes.clear();
-
-                discipline.setValue("None");
-                quality.setValue("Good");
-                status.setValue("Active");
-
                 processAction(e);
-
             }
         });
 
@@ -361,6 +341,24 @@ public class AddBookView<pubilc> extends View{
         p2.setProperty("status", sta);
 
         myModel.stateChangeRequest("InsertBook", p2);
+
+        barcode.clear();
+        title.clear();
+        author1.clear();
+        author2.clear();
+        author3.clear();
+        author4.clear();
+        publisher.clear();
+        yearOfPublication.clear();
+        isbn.clear();
+        suggestedPrice.clear();
+        notes.clear();
+
+        discipline.setValue("None");
+        quality.setValue("Good");
+        status.setValue("Active");
+
+        databaseUpdated();
     }
 
 
