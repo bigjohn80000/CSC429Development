@@ -2,37 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="Worker, StudentBorrower, and Book model classes">
-      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/AddWorkerView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/TransactionView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/model/WorkerCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerBannerIdView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerSelectionView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerTableModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/TestMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/TestMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/database/JDBCBroker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/database/JDBCBroker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/database/Persistable.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/database/Persistable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/database/SQLInsertStatement.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/database/SQLInsertStatement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/dbConfig.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/dbConfig.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/model/EntityBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/EntityBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/src/model/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/Librarian.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/model/TransactionFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/TransactionFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/src/model/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/Worker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/mysql-connector-java-5.1.7-bin.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/LibrarianView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/LibrarianView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/TellerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/TellerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/src/userinterface/TransactionChoiceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/TransactionChoiceView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/src/userinterface/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/ViewFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/database/JDBCBroker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/database/JDBCBroker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/database/Persistable.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/database/Persistable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/dbConfig.ini" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/dbConfig.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/model/EntityBase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/model/EntityBase.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/model/Librarian.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/model/Librarian.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/model/TransactionFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/model/TransactionFactory.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/model/Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/model/Worker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/mysql-connector-java-5.1.7-bin.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/LibrarianView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/LibrarianView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TellerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TellerView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/ViewFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/ViewFactory.class" afterDir="false" />
     </list>
@@ -70,6 +51,14 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1quDEiN2NZcLKVTkPZvPGEQbKlr" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -82,12 +71,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../ImplementationFX/mysql-connector-java-5.1.7-bin.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -138,6 +127,8 @@
       <option name="presentableId" value="Default" />
       <updated>1617920474999</updated>
       <workItem from="1617926195057" duration="3136000" />
+      <workItem from="1618260620154" duration="1307000" />
+      <workItem from="1618261941457" duration="15668000" />
     </task>
     <task id="LOCAL-00001" summary="Im dying inside">
       <created>1617920575439</created>
@@ -160,7 +151,21 @@
       <option name="project" value="LOCAL" />
       <updated>1617932422274</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Worker, StudentBorrower, and Book model classes">
+      <created>1618260099589</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1618260099589</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Worker, StudentBorrower, and Book model classes">
+      <created>1618260318581</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1618260318581</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
