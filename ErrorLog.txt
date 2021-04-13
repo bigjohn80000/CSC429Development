@@ -10,3 +10,6 @@
 [4/12/21 5:00 PM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[com.mysql.jdbc.Driver]>
 [4/12/21 5:20 PM]|Worker|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1>
 [4/12/21 5:20 PM]|Worker|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1>
+[4/12/21 7:43 PM]|Book|insertPersistentState|Error|NOTAG|null<SQL Exception: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'condition , status , author4 , author3 , author2 , notes , author1 , isbn , titl' at line 1>
+[4/12/21 7:44 PM]|Book|insertPersistentState|Error|NOTAG|null<SQL Exception: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'condition , status , author4 , author3 , author2 , notes , author1 , isbn , titl' at line 1>
+[4/12/21 9:28 PM]|Book|insertPersistentState|Error|NOTAG|null<SQL Exception: 0: Data truncation: Incorrect date value: '2020' for column 'yearOfPublication' at row 1>

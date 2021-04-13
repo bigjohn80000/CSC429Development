@@ -20,7 +20,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
-import model.Worker;
+import model.Book;
 
 import java.util.Properties;
 
@@ -39,7 +39,7 @@ public class AddBookView extends View{
     protected TextField notes;
 
     protected ComboBox discipline;
-    protected ComboBox condition;
+    protected ComboBox quality;
     protected ComboBox status;
 
     protected Button cancelButton;
@@ -228,20 +228,20 @@ public class AddBookView extends View{
         isbn.setEditable(true);
         grid.add(isbn, 1, 10);
 
-        Text con = new Text(" Condition : ");
+        Text con = new Text(" Quality : ");
         con.setFont(myFont);
         con.setWrappingWidth(150);
         con.setTextAlignment(TextAlignment.RIGHT);
         grid.add(con, 0, 11);
 
-        condition = new ComboBox();
-        condition.getItems().addAll(
+        quality = new ComboBox();
+        quality.getItems().addAll(
                 "Good",
                 "Damaged"
         );
 
-        condition.setValue("Good");
-        grid.add(condition, 1, 11);
+        quality.setValue("Good");
+        grid.add(quality, 1, 11);
 
         Text sug = new Text(" Suggested Price : ");
         sug.setFont(myFont);
@@ -325,7 +325,7 @@ public class AddBookView extends View{
         String publi = publisher.getText();
         String yeaO = yearOfPublication.getText();
         String isb = isbn.getText();
-        String condi = (String)condition.getValue();
+        String condi = (String)quality.getValue();
         String sugPric = suggestedPrice.getText();
         String no = notes.getText();
         String sta = (String)status.getValue();
@@ -341,7 +341,7 @@ public class AddBookView extends View{
         p2.setProperty("publisher", publi);
         p2.setProperty("yearOfPublication", yeaO);
         p2.setProperty("isbn", isb);
-        p2.setProperty("condition", condi);
+        p2.setProperty("quality", condi);
         p2.setProperty("suggestedPrice", sugPric);
         p2.setProperty("notes", no);
         p2.setProperty("status", sta);
