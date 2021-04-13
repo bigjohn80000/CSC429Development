@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7657e061-d5d7-4c48-9621-b0457191e6f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/AddBookView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/AddStudentBorrowerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/addBookView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/AddStudentBorrowerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/AddStudentBorrowerView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +19,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1quVvHWj4mRT1GxUbWGJGQRHgUx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -30,6 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -66,5 +68,8 @@
     <MESSAGE value="updated dbConfig.ini with hunters database config" />
     <MESSAGE value="added addBookView.java still in process of making it work" />
     <option name="LAST_COMMIT_MESSAGE" value="added addBookView.java still in process of making it work" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CSC429Development$Library.ic" NAME="Library Coverage Results" MODIFIED="1617932504544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

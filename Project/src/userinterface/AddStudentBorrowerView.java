@@ -35,15 +35,15 @@ public class AddStudentBorrowerView extends View
 {
 
     // GUI components
-    protected  int bannerId;
-    protected string firstName;
-    protected string lastName;
-    protected string contactPhone;
-    protected string email;
+    protected  TextField bannerId;
+    protected TextField firstName;
+    protected TextField lastName;
+    protected TextField contactPhone;
+    protected TextField email;
     protected ComboBox borrowerStatus;
-    protected string dateOfLatestBorrowerStatus;
-    protected string dateOfRegistration;
-    protected string notes;
+    protected TextField dateOfLatestBorrowerStatus;
+    protected TextField dateOfRegistration;
+    protected TextField notes;
     protected ComboBox status;
 
 
@@ -87,7 +87,7 @@ public class AddStudentBorrowerView extends View
         HBox container = new HBox();
         container.setAlignment(Pos.CENTER);
 
-        Text titleText = new Text(" New Patron ");
+        Text titleText = new Text(" New Student Borrower ");
         titleText.setFont(Font.font("Arial", FontWeight.BOLD, 20));
         titleText.setWrappingWidth(300);
         titleText.setTextAlignment(TextAlignment.CENTER);
@@ -115,16 +115,39 @@ public class AddStudentBorrowerView extends View
         prompt.setFill(Color.BLACK);
         grid.add(prompt, 0, 0, 2, 1);
 
-        Text patronName = new Text(" Student's Name : ");
-        Font myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
-        patronName.setFont(myFont);
-        patronName.setWrappingWidth(150);
-        patronName.setTextAlignment(TextAlignment.RIGHT);
-        grid.add(patronName, 0, 1);
 
-        name = new TextField();
-        name.setEditable(true);
-        grid.add(name, 1, 1);
+        Text banID = new Text("Students Banner ID : ");
+        Font myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
+        banID.setFont(myFont);
+        banID.setWrappingWidth(150);
+        banID.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(banID, 0, 1);
+
+        firstName = new TextField();
+        firsName.setEditable(true);
+        grid.add(firsName, 1, 1);
+
+        Text firsName = new Text("Students First Name : ");
+        Font myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
+        firsName.setFont(myFont);
+        firsName.setWrappingWidth(150);
+        firsName.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(firsName, 0, 2);
+
+        firstName = new TextField();
+        firsName.setEditable(true);
+        grid.add(firsName, 1, 2);
+
+        Text lasName = new Text(" Students Last Name: ");
+        Font myFont = Font.font("Helvetica", FontWeight.BOLD, 12);
+        lasName.setFont(myFont);
+        lasName.setTextAlignment(TextAlignment.RIGHT);
+        grid.add(lasName,0,3)
+
+        lasName = new TextField();
+        lasName.setEditable(true);
+        grid.add(lasName,1,3);
+
 
         Text patAddress = new Text(" Patron's Address : ");
         patAddress.setFont(myFont);
@@ -221,6 +244,19 @@ public class AddStudentBorrowerView extends View
 
         clearErrorMessage();
 
+        String banid = bannerId.getText();
+        String first = firstName.getText();
+        String last = lastName.getText();
+        String phone = contactPhone.getText();
+        String eml = email.getText();
+        String borrowerStat = (String)borrowerStatus.getvalue();
+        String dateOfLatest = dateOfLatestBorrowerStatus.getText();
+        String dateOfReg = dateOfRegistration.getText();
+        String note = notes.getText();
+        String stat = (String)status.getvalue();
+
+
+
         String patron = name.getText();
         String pAddress = address.getText();
         String cty = city.getText();
@@ -229,14 +265,14 @@ public class AddStudentBorrowerView extends View
         String eml = email.getText();
         String date = dob.getText();
 
-        Properties p1 = new Properties();
-        p1.setProperty("name", patron);
-        p1.setProperty("address", pAddress);
-        p1.setProperty("city", cty);
-        p1.setProperty("stateCode", st);
-        p1.setProperty("zip", zip);
-        p1.setProperty("email", eml);
-        p1.setProperty("dateOfBirth", date);
+        Properties p2 = new Properties();
+        p2.setProperty("name", patron);
+        p2.setProperty("address", pAddress);
+        p2.setProperty("city", cty);
+        p2.setProperty("stateCode", st);
+        p2.setProperty("zip", zip);
+        p2.setProperty("email", eml);
+        p2.setProperty("dateOfBirth", date);
 
         Patron pat1 = new Patron(p1);
         pat1.update();
@@ -271,7 +307,7 @@ public class AddStudentBorrowerView extends View
     {
         clearErrorMessage();
 
-        if (key.equals("PopulatePatronMessage") == true)
+        if (key.equals("AddStudentBorrowerMessage") == true)
         {
             displayMessage((String)value);
         }
