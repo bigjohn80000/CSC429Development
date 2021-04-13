@@ -127,6 +127,7 @@ public class Worker extends EntityBase {
                 persistentState.setProperty(nextKey, nextValue);
             }
         }
+        exists = false;
 
     }
 
@@ -144,6 +145,9 @@ public class Worker extends EntityBase {
 
     @Override
     public Object getState(String key) {
+
+        System.out.println("Its  hitting here, " + persistentState.getProperty(key));
+
         return persistentState.getProperty(key);
     }
 
