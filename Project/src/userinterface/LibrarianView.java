@@ -13,10 +13,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -165,14 +162,13 @@ public class LibrarianView extends View
     public void processAction(Event evt)
     {
         // DEBUG: System.out.println("TellerView.actionPerformed()");
-
         clearErrorMessage();
 
         String useridEntered = userid.getText();
 
         if ((useridEntered == null) || (useridEntered.length() == 0))
         {
-            displayErrorMessage("Please enter a user id!");
+            databaseError();
             userid.requestFocus();
         }
         else
@@ -199,7 +195,12 @@ public class LibrarianView extends View
         userid.setText("");
         password.setText("");
 
-        myModel.stateChangeRequest("Login", props);
+
+        try {
+            myModel.stateChangeRequest("Login", props);
+        }catch(Exception z){
+            databaseError();
+        }
     }
 
     //---------------------------------------------------------
@@ -207,10 +208,13 @@ public class LibrarianView extends View
     {
         // STEP 6: Be sure to finish the end of the 'perturbation'
         // by indicating how the view state gets updated.
-        if (key.equals("LoginError") == true)
-        {
+        if (key.equals("LoginError") == true) {
             // display the passed text
-            displayErrorMessage((String)value);
+            //databaseError();
+            //System.out.println("HERE");
+            //displayErrorMessage((String)value);
+        }else if(key.equals("Login") == true){
+            System.out.println("");
         }
 
     }
@@ -233,6 +237,16 @@ public class LibrarianView extends View
         statusLog.clearErrorMessage();
     }
 
+
+    public void databaseError(){
+
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Database");
+        alert.setHeaderText("Ooops, there was an issue finding your account!");
+        alert.setContentText("Please make sure all fields are filled out correctly.");
+
+        alert.showAndWait();
+    }
 }
 
 
