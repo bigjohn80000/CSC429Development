@@ -1,5 +1,4 @@
 package userinterface;
-
 import impresario.IModel;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -69,10 +68,10 @@ public class WorkerSelectionView extends View
         ObservableList<WorkerTableModel> tableData = FXCollections.observableArrayList();
         try
         {
-            WorkerCollection patronCollection = (WorkerCollection)myModel.getState("WorkerList");
+            WorkerCollection workerCollection = (WorkerCollection)myModel.getState("WorkerList");
 
-            Vector entryList = (Vector)patronCollection.getState("Worker");
-            System.out.println(entryList.size());
+            Vector entryList = (Vector)workerCollection.getState("Workers");
+
             Enumeration entries = entryList.elements();
 
             while (entries.hasMoreElements() == true)
@@ -226,7 +225,8 @@ public class WorkerSelectionView extends View
 
         HBox btnContainer = new HBox(100);
         btnContainer.setAlignment(Pos.CENTER);
-        btnContainer.getChildren().add(submitButton);
+        btnContainer.getChildren().add(update);
+        btnContainer.getChildren().add(delete);
         btnContainer.getChildren().add(cancelButton);
 
         vbox.getChildren().add(grid);

@@ -1,21 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="Worker, StudentBorrower, and Book model classes">
-      <change afterPath="$PROJECT_DIR$/Project/src/model/WorkerCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerBannerIdView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerSelectionView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerTableModel.java" afterDir="false" />
+    <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="Started trying updateWorker, unfinished. Has problems.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ErrorLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ErrorLog.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/src/model/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/Librarian.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/src/model/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/model/WorkerCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/WorkerCollection.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/src/userinterface/TransactionChoiceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/TransactionChoiceView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/ViewFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/WorkerBannerIdView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerBannerIdView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/WorkerSelectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerSelectionView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/WorkerTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerTableModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/model/Librarian.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/model/Librarian.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/model/Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/model/Worker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/ViewFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/ViewFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerBannerIdView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerBannerIdView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerBannerIdView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerBannerIdView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +77,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -100,13 +101,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -129,6 +132,7 @@
       <workItem from="1617926195057" duration="3136000" />
       <workItem from="1618260620154" duration="1307000" />
       <workItem from="1618261941457" duration="15668000" />
+      <workItem from="1618329362093" duration="9692000" />
     </task>
     <task id="LOCAL-00001" summary="Im dying inside">
       <created>1617920575439</created>
@@ -186,9 +190,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Im dying inside" />
     <MESSAGE value="Worker, StudentBorrower, and Book model classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Worker, StudentBorrower, and Book model classes" />
+    <MESSAGE value="Started trying updateWorker, unfinished. Has problems." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started trying updateWorker, unfinished. Has problems." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CSC429Development$Library.ic" NAME="Library Coverage Results" MODIFIED="1617932504544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/CSC429Development$Library.ic" NAME="Library Coverage Results" MODIFIED="1618329628892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -80,7 +80,14 @@ public class WorkerCollection   extends EntityBase implements IView
         }
 
     }
-
+    public void getFirstName(String fName) {
+        String query = "SELECT * FROM " + myTableName + " WHERE (firstName LIKE '%" + fName + "%')";
+        try {
+            queryer(query);
+        } catch (Exception x) {
+            System.out.println("Error: " + x);
+        }
+    }
     public void getBannerId(String stZip) {
         String query = "SELECT * FROM " + myTableName + " WHERE (bannerId LIKE "+ stZip + ")";
         try {
@@ -100,6 +107,7 @@ public class WorkerCollection   extends EntityBase implements IView
             for (int cnt = 0; cnt < allDataRetrieved.size(); cnt++)
             {
                 Properties nextPatronData = (Properties)allDataRetrieved.elementAt(cnt);
+                System.out.println(nextPatronData);
 
                 Worker worker = new Worker(nextPatronData);
 
@@ -166,8 +174,12 @@ public class WorkerCollection   extends EntityBase implements IView
     //----------------------------------------------------------
     public Object getState(String key)
     {
-        if (key.equals("Workers"))
+        if (key.equals("Workers")) {
+
+            System.out.println("Hunter Thomas says hi");
             return workers;
+
+        }
         else
         if (key.equals("WorkerList"))
             return this;

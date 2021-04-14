@@ -145,9 +145,6 @@ public class Worker extends EntityBase {
 
     @Override
     public Object getState(String key) {
-
-        System.out.println("Its  hitting here, " + persistentState.getProperty(key));
-
         return persistentState.getProperty(key);
     }
 
@@ -162,8 +159,8 @@ public class Worker extends EntityBase {
     }
 
     public static int compare(Worker a, Worker b) {
-        String ba = (String)a.getState("name");
-        String bb = (String)b.getState("name");
+        String ba = (String)a.getState("firstName");
+        String bb = (String)b.getState("firstName");
         return ba.compareTo(bb);
     }
 

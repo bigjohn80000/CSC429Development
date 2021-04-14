@@ -19,7 +19,7 @@ import javafx.scene.text.TextAlignment;
 
 public class WorkerBannerIdView extends View {
 
-    protected TextField bannerId;
+    protected TextField fName;
 
     protected Button cancelButton;
     protected Button submitButton;
@@ -48,7 +48,7 @@ public class WorkerBannerIdView extends View {
     private Node createTitle() {
         HBox var1 = new HBox();
         var1.setAlignment(Pos.CENTER);
-        Text var2 = new Text(" Worker BannerId Search ");
+        Text var2 = new Text(" Worker Search ");
         var2.setFont(Font.font("Arial", FontWeight.BOLD, 20.0D));
         var2.setWrappingWidth(300.0D);
         var2.setTextAlignment(TextAlignment.CENTER);
@@ -69,17 +69,17 @@ public class WorkerBannerIdView extends View {
         grid.setVgap(10);
         grid.setPadding(new Insets(25, 25, 25, 25));
 
-        Text prompt = new Text("BANNERID");
+        Text prompt = new Text("First Name");
         prompt.setWrappingWidth(400);
         prompt.setTextAlignment(TextAlignment.CENTER);
         prompt.setFill(Color.BLACK);
         grid.add(prompt, 0, 0, 2, 1);
 
 
-        bannerId = new TextField();
-        bannerId.setEditable(true);
-        bannerId.setAlignment(Pos.CENTER);
-        grid.add(bannerId,0,1,2,1);
+        fName = new TextField();
+        fName.setEditable(true);
+        fName.setAlignment(Pos.CENTER);
+        grid.add(fName,0,1,2,1);
 
         submitButton = new Button("Submit");
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
@@ -88,7 +88,7 @@ public class WorkerBannerIdView extends View {
 
                 //processAction(e);
 
-                myModel.stateChangeRequest("SelectWorkerView", bannerId.getText());
+                myModel.stateChangeRequest("SelectWorkerView", fName.getText());
             }
         });
 
@@ -123,7 +123,7 @@ public class WorkerBannerIdView extends View {
     }
 
     public void populateFields() {
-        this.bannerId.setText((String)this.myModel.getState("bannerId"));
+       // this.fName.setText((String)this.myModel.getState("firstName"));
 
     }
 
@@ -164,7 +164,7 @@ public class WorkerBannerIdView extends View {
 
         clearErrorMessage();
 
-        String zipCode = bannerId.getText();
+        String zipCode = fName.getText();
     }
 
 }

@@ -102,6 +102,11 @@ public class Librarian implements IView, IModel
             return transactionErrorMessage;
         }
         else
+        if (key.equals("WorkerList") == true)
+        {
+            return wc;
+        }
+        else
         if (key.equals("firstName") == true)
         {
             if (worker != null)
@@ -334,7 +339,8 @@ public class Librarian implements IView, IModel
 
     private void searchWorkers(String z) throws InvalidPrimaryKeyException {
         System.out.println("its absolutely hitting here");
-        workerSearch = new Worker(z);
+        wc = new WorkerCollection();
+        wc.getFirstName(z);
         createAndShowWorkerSelectionView();
     }
 

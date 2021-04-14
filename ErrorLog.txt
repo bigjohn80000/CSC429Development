@@ -1,3 +1,6 @@
 [4/12/21 5:05 PM]|Worker|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'hthom6' in 'where clause'>
 [4/12/21 6:30 PM]|Worker|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1>
 [4/12/21 6:30 PM]|Worker|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1>
+[4/13/21 1:41 PM]|WorkerCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'zip' in 'where clause'>
+[4/13/21 1:44 PM]|WorkerCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'zip' in 'where clause'>
+[4/13/21 1:46 PM]|WorkerCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'zip' in 'where clause'>

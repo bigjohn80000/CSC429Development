@@ -31,7 +31,7 @@ public class WorkerTableModel{
         dateOfLastestCredentialsStatus =  new SimpleStringProperty(bookData.elementAt(7));
         dateOfHire =  new SimpleStringProperty(bookData.elementAt(8));
         status =  new SimpleStringProperty(bookData.elementAt(9));
-        System.out.print(bannerId + " " + firstName + " " + email);
+        System.out.print(bannerId + " " + firstName + " " + password);
     }
 
     //----------------------------------------------------------------------------
@@ -41,7 +41,7 @@ public class WorkerTableModel{
     public void setBannerId(String number) { bannerId.set(number); }
 
     //----------------------------------------------------------------------------
-    public String getPassowrd() { return password.get(); }
+    public String getPassword() { return password.get(); }
 
     //----------------------------------------------------------------------------
     public void setPassword(String pass) { password.set(pass); }
@@ -103,24 +103,24 @@ public class WorkerTableModel{
     }
 
     //----------------------------------------------------------------------------
-    public String getDOLCS()
+    public String getDateOfLatestCredentialsStatus()
     {
         return dateOfLastestCredentialsStatus.get();
     }
 
     //----------------------------------------------------------------------------
-    public void setDOLCS(String dob)
+    public void setDateOfLatestCredentialsStatus(String dob)
     {
         dateOfLastestCredentialsStatus.set(dob);
     }
 
     //----------------------------------------------------------------------------
-    public String getDOH() {
+    public String getDateOfHire() {
         return dateOfHire.get();
     }
 
     //----------------------------------------------------------------------------
-    public void setDOH(String hire)
+    public void setDateOfHire(String hire)
     {
         dateOfHire.set(hire);
     }
