@@ -2,15 +2,46 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="All Add classes Perfecto">
+      <change beforePath="$PROJECT_DIR$/.idea/CSC429Development.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CSC429Development.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/TransactionChoiceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/TransactionChoiceView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/TestMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/database/JDBCBroker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/database/Persistable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/model/EntityBase.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/model/Librarian.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/model/TransactionFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/model/Worker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/AddBookView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/AddBookView$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/AddBookView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/AddStudentBorrowerView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/AddStudentBorrowerView$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/AddStudentBorrowerView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/AddWorkerView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/AddWorkerView$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/AddWorkerView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/LibrarianView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TellerView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionView$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionView$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionView$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionView$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionView$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/ViewFactory.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +136,9 @@
       <list>
         <item itemvalue="Application.Library" />
         <item itemvalue="Application.TestMain" />
+        <item itemvalue="Application.Library" />
+        <item itemvalue="Application.TestMain" />
+        <item itemvalue="Application.Library" />
       </list>
     </recent_temporary>
   </component>
