@@ -113,3 +113,11 @@
 [4/13/21 10:05 PM]|JDBCBroker|JDBCBroker|Error|NOTAG|null<Could not load driver class[com.mysql.jdbc.Driver]>
 [4/13/21 10:10 PM]|StudentBorrower|insertAutoIncrementalPersistentState|Error|NOTAG|null<SQL Exception: 0: Data truncation: Data too long for column 'contactPhone' at row 1>
 [4/13/21 10:11 PM]|StudentBorrower|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 1>
+[4/14/21 4:27 PM]|Worker|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'fg' in 'where clause'>
+[4/14/21 4:35 PM]|Worker|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'vvfevfevfe' in 'where clause'>
+[4/14/21 4:45 PM]|Worker|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1064: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`3)' at line 1>
+[4/14/21 5:07 PM]|Worker|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'qwrewr' in 'where clause'>
+[4/14/21 5:07 PM]|Worker|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'weqreqwr' in 'where clause'>
+[4/14/21 5:07 PM]|Worker|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'wqerewqr' in 'where clause'>
+[4/14/21 5:08 PM]|Worker|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'rewqrwer' in 'where clause'>
+[4/14/21 5:08 PM]|Worker|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'rweqrq' in 'where clause'>

@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="FML">
+    <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="Making da moves">
+      <change afterPath="$PROJECT_DIR$/Project/src/model/WorkerCollection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/DeleteWorkerVerificationView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/ModifyWorkerView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerBannerIdView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerSelectionView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerTableModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/LibrarianView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/LibrarianView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ErrorLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ErrorLog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/model/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/Librarian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/model/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/ViewFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/LibrarianView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/LibrarianView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/LibrarianView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/LibrarianView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/LibrarianView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/LibrarianView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/LibrarianView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/LibrarianView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618366345804</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Making da moves">
+      <created>1618434532484</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1618434532484</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +276,8 @@
     <MESSAGE value="All Add classes Perfecto" />
     <MESSAGE value="Not Messing any more" />
     <MESSAGE value="FML" />
-    <option name="LAST_COMMIT_MESSAGE" value="FML" />
+    <MESSAGE value="Making da moves" />
+    <option name="LAST_COMMIT_MESSAGE" value="Making da moves" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CSC429Development$Library.ic" NAME="Library Coverage Results" MODIFIED="1617932504544" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

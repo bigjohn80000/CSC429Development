@@ -16,71 +16,72 @@ public class Worker extends EntityBase {
     private boolean exists = true;
 
     public Worker(String bannerId, String pass)
-        throws InvalidPrimaryKeyException, PasswordMismatchException {
-            super(myTableName);
+            throws InvalidPrimaryKeyException, PasswordMismatchException {
+        super(myTableName);
 
-            String idToQuery = bannerId;
+        String idToQuery = bannerId;
 
-            String query = "SELECT * FROM " + myTableName + " WHERE (bannerId = " + idToQuery + ")";
+        String query = "SELECT * FROM " + myTableName + " WHERE (bannerId = " + idToQuery + ")";
 
-            Vector allDataRetrieved =  getSelectQueryResult(query);
+        Vector allDataRetrieved =  getSelectQueryResult(query);
 
-            // You must get one account at least
-            if (allDataRetrieved.isEmpty() == false)
+        // You must get one account at least
+        if (allDataRetrieved.isEmpty() == false)
+        {
+            int size = allDataRetrieved.size();
+
+            // There should be EXACTLY one account. More than that is an error
+            if (size != 1)
             {
-                int size = allDataRetrieved.size();
-
-                // There should be EXACTLY one account. More than that is an error
-                if (size != 1)
-                {
-                    throw new InvalidPrimaryKeyException("Multiple workers matching user bannerId : "
-                            + idToQuery + " found.");
-                }
-                else
-                {
-                    // copy all the retrieved data into persistent state
-                    Properties retrievedCustomerData = (Properties)allDataRetrieved.elementAt(0);
-                    persistentState = new Properties();
-
-                    Enumeration allKeys = retrievedCustomerData.propertyNames();
-                    while (allKeys.hasMoreElements() == true)
-                    {
-                        String nextKey = (String)allKeys.nextElement();
-                        String nextValue = retrievedCustomerData.getProperty(nextKey);
-
-                        if (nextValue != null)
-                        {
-                            persistentState.setProperty(nextKey, nextValue);
-                        }
-                    }
-
-                }
-            }
-            // If no account found for this user name, throw an exception
-            else
-            {
-                throw new InvalidPrimaryKeyException("No worker matching bannerId : "
+                throw new InvalidPrimaryKeyException("Multiple workers matching user bannerId : "
                         + idToQuery + " found.");
             }
-
-            String password = pass;
-
-            String accountPassword = persistentState.getProperty("password");
-
-            if (accountPassword != null)
+            else
             {
-                boolean passwordCheck = accountPassword.equals(password);
-                if (passwordCheck == false)
+                // copy all the retrieved data into persistent state
+                Properties retrievedCustomerData = (Properties)allDataRetrieved.elementAt(0);
+                persistentState = new Properties();
+
+                Enumeration allKeys = retrievedCustomerData.propertyNames();
+                while (allKeys.hasMoreElements() == true)
                 {
-                    throw new PasswordMismatchException("Password mismatch");
+                    String nextKey = (String)allKeys.nextElement();
+                    String nextValue = retrievedCustomerData.getProperty(nextKey);
+
+                    if (nextValue != null)
+                    {
+                        persistentState.setProperty(nextKey, nextValue);
+                    }
                 }
 
             }
-            else
+        }
+        // If no account found for this user name, throw an exception
+        else
+        {
+            throw new InvalidPrimaryKeyException("No worker matching bannerId : "
+                    + idToQuery + " found.");
+        }
+
+        String password = pass;
+
+        String accountPassword = persistentState.getProperty("password");
+
+        if (accountPassword != null)
+        {
+            boolean passwordCheck = accountPassword.equals(password);
+            if (passwordCheck == false)
             {
-                throw new PasswordMismatchException("Password missing for account");
+                throw new PasswordMismatchException("Password mismatch");
             }
+
+        }
+        else
+        {
+            throw new PasswordMismatchException("Password missing for account");
+        }
     }
+
     public Worker(String bannerId) throws InvalidPrimaryKeyException {
         super(myTableName);
         this.setDependencies();
@@ -138,6 +139,10 @@ public class Worker extends EntityBase {
         exists = false;
     }
 
+    public void setExistsTrue(boolean x){
+        exists = true;
+    }
+
     private void setDependencies(){
         this.dependencies = new Properties();
         this.myRegistry.setDependencies(this.dependencies);
@@ -159,8 +164,8 @@ public class Worker extends EntityBase {
     }
 
     public static int compare(Worker a, Worker b) {
-        String ba = (String)a.getState("name");
-        String bb = (String)b.getState("name");
+        String ba = (String)a.getState("firstName");
+        String bb = (String)b.getState("firstName");
         return ba.compareTo(bb);
     }
 

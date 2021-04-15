@@ -26,6 +26,21 @@ public class ViewFactory {
 		{
 			return new TransactionChoiceView(model);
 		}
+		else if(viewName.equals("WorkerBannerIdView") == true)
+		{
+			return new WorkerBannerIdView(model);
+		}
+		else if(viewName.equals("WorkerSelectionView") == true)
+		{
+			return new WorkerSelectionView(model);
+		}
+		else if(viewName.equals("ModifyWorkerView") == true)
+		{
+			return new ModifyWorkerView(model);
+		}
+		else if(viewName.equals("DeleteWorkerVerificationView") == true) {
+			return new DeleteWorkerVerificationView(model);
+		}
 		else if(viewName.equals("AccountCollectionView") == true)
 		{
 			return new AccountCollectionView(model);

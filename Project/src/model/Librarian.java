@@ -33,8 +33,12 @@ public class Librarian implements IView, IModel
     private Properties dependencies;
     private ModelRegistry myRegistry;
 
+    private Worker workerSearch;
     private Worker worker;
-    private Book book;
+    private WorkerCollection wc;
+    private int delmod = 1;
+    private String fName = "";
+    private String lName = "";
 
 
     // GUI Components
@@ -43,6 +47,8 @@ public class Librarian implements IView, IModel
 
     private String loginErrorMessage = "";
     private String transactionErrorMessage = "";
+
+
 
     // constructor for this class
     //----------------------------------------------------------
@@ -102,6 +108,21 @@ public class Librarian implements IView, IModel
             return transactionErrorMessage;
         }
         else
+        if (key.equals("delmod") == true)
+        {
+            return delmod;
+        }
+        else
+        if (key.equals("WorkerList") == true)
+        {
+            return wc;
+        }
+        else
+        if (key.equals("Worker") == true)
+        {
+            return workerSearch;
+        }
+        else
         if (key.equals("firstName") == true)
         {
             if (worker != null)
@@ -136,9 +157,75 @@ public class Librarian implements IView, IModel
             }
         }
         else
+        if (key.equals("SelectWorkerView") == true && value != null)
+        {
+            try {
+                searchWorkers((Properties)value);
+            } catch (InvalidPrimaryKeyException e) {
+                e.printStackTrace();
+            }
+        }
+        else
+        if (key.equals("SelectWorkerView") == true && value == null)
+        {
+            try {
+                Properties getVal = new Properties();
+                getVal.setProperty("firstName", fName);
+                getVal.setProperty("lastName", lName);
+                searchWorkers(getVal);
+            } catch (InvalidPrimaryKeyException e) {
+                e.printStackTrace();
+            }
+        }
+        else
         if (key.equals("AddWorker") == true)
         {
             createAndShowAddWorkerView();
+        }
+        else
+        if (key.equals("SearchWorker") == true)
+        {
+            delmod = (int)value;
+            createAndShowWorkerBannerIdView();
+        }
+        else
+        if (key.equals("WorkerSelected") == true && delmod == 1)
+        {
+            try {
+                getWorker((String)value);
+            } catch (InvalidPrimaryKeyException e) {
+                e.printStackTrace();
+            }
+            createAndShowModifyWorkerView();
+        }
+        else
+        if (key.equals("WorkerSelected") == true && delmod == 0)
+        {
+            try {
+                getWorker((String)value);
+            } catch (InvalidPrimaryKeyException e) {
+                e.printStackTrace();
+            }
+            createAndShowDeleteWorkerVerificationView();
+        }
+        if (key.equals("insertWorkerModification") == true)
+        {
+            try {
+                insertWorkerModification((Properties)value);
+            } catch (InvalidPrimaryKeyException e) {
+                e.printStackTrace();
+            }
+        }
+        else
+        if (key.equals("insertWorker") == true)
+        {
+            try {
+                insertWorker((Properties)value);
+            } catch (InvalidPrimaryKeyException e) {
+                Worker insertedWorker = new Worker((Properties)value);
+                insertedWorker.update();
+            }
+
         }
         else
         if (key.equals("AddBook") == true)
@@ -330,6 +417,110 @@ public class Librarian implements IView, IModel
         swapToView(currentScene);
 
     }
+
+    private void createAndShowDeleteWorkerView()
+    {
+        Scene currentScene = (Scene)myViews.get("DeleteWorkerView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("DeleteWorkerView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("DeleteWorkerView", currentScene);
+        }
+
+        swapToView(currentScene);
+
+    }
+
+    private void createAndShowDeleteWorkerVerificationView()
+    {
+        Scene currentScene = (Scene)myViews.get("DeleteWorkerVerificationView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("DeleteWorkerVerificationView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("DeleteWorkerVerificationView", currentScene);
+        }
+
+        swapToView(currentScene);
+
+    }
+
+    private void getWorker(String id)throws InvalidPrimaryKeyException {
+        workerSearch = new Worker(id);
+    }
+
+    private void searchWorkers(Properties z) throws InvalidPrimaryKeyException {
+        wc = new WorkerCollection();
+        wc.getFirstAndLastName(z.getProperty("firstName"), z.getProperty("lastName"));
+        createAndShowWorkerSelectionView();
+        fName = z.getProperty("firstName");
+        lName = z.getProperty("lastName");
+
+    }
+    private void createAndShowWorkerSelectionView()
+    {
+        Scene currentScene = (Scene)myViews.get("WorkerSelectionView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("WorkerSelectionView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("WorkerSelectionView", currentScene);
+        }
+
+        swapToView(currentScene);
+
+    }
+
+
+
+    private void insertWorkerModification(Properties p) throws InvalidPrimaryKeyException {
+        Worker modWorker = new Worker(p);
+        modWorker.setExistsTrue(true);
+        modWorker.update();
+    }
+
+    private void createAndShowModifyWorkerView()
+    {
+        Scene currentScene = (Scene)myViews.get("ModifyWorkerView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("ModifyWorkerView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("ModifyWorker", currentScene);
+        }
+
+        swapToView(currentScene);
+
+    }
+
+    private void createAndShowWorkerBannerIdView()
+    {
+        Scene currentScene = (Scene)myViews.get("WorkerBannerIdView");
+
+        if (currentScene == null)
+        {
+            // create our initial view
+            View newView = ViewFactory.createView("WorkerBannerIdView", this); // USE VIEW FACTORY
+            currentScene = new Scene(newView);
+            myViews.put("WorkerBannerIdView", currentScene);
+        }
+
+
+        // make the view visible by installing it into the frame
+        swapToView(currentScene);
+
+    }
+
+
     //------------------------------------------------------------
     private void createAndShowTellerView()
     {
