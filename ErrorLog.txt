@@ -4,3 +4,5 @@
 [4/13/21 1:41 PM]|WorkerCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'zip' in 'where clause'>
 [4/13/21 1:44 PM]|WorkerCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'zip' in 'where clause'>
 [4/13/21 1:46 PM]|WorkerCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'zip' in 'where clause'>
+[4/14/21 1:29 PM]|WorkerCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'Thomas' in 'where clause'>
+[4/14/21 1:39 PM]|WorkerCollection|getSelectQueryResult|Error|NOTAG|null<SQL Exception: 1054: Unknown column 'Thomas' in 'where clause'>

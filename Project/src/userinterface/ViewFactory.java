@@ -26,13 +26,13 @@ public class ViewFactory {
 		{
 			return new WorkerSelectionView(model);
 		}
-		else if(viewName.equals("AccountHolderIDEntryView") == true)
+		else if(viewName.equals("ModifyWorkerView") == true)
 		{
-			return new AccountHolderIDEntryView(model);
+			return new ModifyWorkerView(model);
 		}
-		else if(viewName.equals("DepositTransactionView") == true)
+		else if(viewName.equals("DeleteWorkerVerificationView") == true)
 		{
-			return new DepositTransactionView(model);
+			return new DeleteWorkerVerificationView(model);
 		}
 		else if(viewName.equals("DepositAmountView") == true)
 		{

@@ -176,13 +176,13 @@ public class TransactionChoiceView extends View
 
 		HBox iscCont = new HBox(10);
 		iscCont.setAlignment(Pos.CENTER);
-		imposeServiceChargeButton = new Button("Impose Service Charge");
+		imposeServiceChargeButton = new Button("Delete Worker");
 		imposeServiceChargeButton.setFont(Font.font("Arial", FontWeight.BOLD, 14));
 		imposeServiceChargeButton.setOnAction(new EventHandler<ActionEvent>() {
 
        		     @Override
        		     public void handle(ActionEvent e) {
-       		     	 myModel.stateChangeRequest("ImposeServiceCharge", null);
+       		     	 myModel.stateChangeRequest("SearchWorker", 0);
             	     }
         	});
 		iscCont.getChildren().add(imposeServiceChargeButton);

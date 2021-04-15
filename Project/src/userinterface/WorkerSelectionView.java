@@ -9,6 +9,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -35,10 +36,11 @@ public class WorkerSelectionView extends View
 
 
     //--------------------------------------------------------------------------
-    public WorkerSelectionView(IModel librarian)
+    public WorkerSelectionView(IModel worker)
     {
-        super(librarian, "WorkerSelectionView");
 
+        super(worker, "WorkerSelectionView");
+        System.out.println("-------------------------------------------------------------------------------------------");
         // create a container for showing the contents
         VBox container = new VBox(10);
         container.setPadding(new Insets(15, 5, 5, 5));
@@ -66,8 +68,10 @@ public class WorkerSelectionView extends View
     {
 
         ObservableList<WorkerTableModel> tableData = FXCollections.observableArrayList();
+        System.out.println("TTTTTTTTTTHHHHHHHHHOOOOOOMMMMMMMMAAAAAAAASSSSSSSSSSSS");
         try
         {
+            System.out.println("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUNNNNNNNNNNNNNNNNNNNNNNNNTTTTTTTTTTTTTTTTTTTTTTTEEEEEEEEEEEEEEEEEEEEEEEERRRRRRRR");
             WorkerCollection workerCollection = (WorkerCollection)myModel.getState("WorkerList");
 
             Vector entryList = (Vector)workerCollection.getState("Workers");
@@ -182,13 +186,21 @@ public class WorkerSelectionView extends View
 
         tableOfWorkers.getColumns().addAll(workerBannerIdColumn, passwordColumn, firstNameColumn, lastNameColumn, contactPhoneColumn, emailColumn
                 , credentialsColumn, dOLCSColumn, dOHColumn, statusColumn);
-
+        tableOfWorkers.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event)
+            {
+                if (event.isPrimaryButtonDown() && event.getClickCount() >=2 ){
+                    processWorkerSelected();
+                }
+            }
+        });
 
         ScrollPane scrollPane = new ScrollPane();
         scrollPane.setPrefSize(115, 150);
         scrollPane.setContent(tableOfWorkers);
 
-        update = new Button("Update Worker");
+        update = new Button("Submit");
         update.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
@@ -196,37 +208,23 @@ public class WorkerSelectionView extends View
                 clearErrorMessage();
                 // do the inquiry
                 processPatronSelected();
-                myModel.stateChangeRequest("UpdateWorker", null);
-
             }
         });
 
-        delete = new Button("Delete Worker");
-        delete.setOnAction(new EventHandler<ActionEvent>() {
-
-            @Override
-            public void handle(ActionEvent e) {
-                clearErrorMessage();
-                // do the inquiry
-                processPatronSelected();
-                myModel.stateChangeRequest("DeleteWorker", null);
-
-            }
-        });
 
         cancelButton = new Button("Back");
         cancelButton.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent e) {
-                myModel.stateChangeRequest("patronSearch", null);
+                int delmod = (int) myModel.getState("delmod");
+                myModel.stateChangeRequest("SearchWorker", delmod);
             }
         });
 
         HBox btnContainer = new HBox(100);
         btnContainer.setAlignment(Pos.CENTER);
         btnContainer.getChildren().add(update);
-        btnContainer.getChildren().add(delete);
         btnContainer.getChildren().add(cancelButton);
 
         vbox.getChildren().add(grid);
@@ -264,7 +262,17 @@ public class WorkerSelectionView extends View
         return statusLog;
     }
 
+    protected void processWorkerSelected()
+    {
+        WorkerTableModel selectedItem = tableOfWorkers.getSelectionModel().getSelectedItem();
 
+        if(selectedItem != null)
+        {
+            String selectedBannerId = selectedItem.getBannerId();
+
+            myModel.stateChangeRequest("WorkerSelected", selectedBannerId);
+        }
+    }
     /**
      * Display info message
      */

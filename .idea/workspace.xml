@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="Zach told me to put a comment for later... He also said he is the king...">
+    <list default="true" id="ba739207-ab8e-47ec-9447-b27ccd368f69" name="Default Changelist" comment="Committing to main">
+      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/DeleteWorkerVerificationView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/src/userinterface/ModifyWorkerView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ErrorLog.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ErrorLog.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/model/Librarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/Librarian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/model/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/model/WorkerCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/model/WorkerCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/TransactionChoiceView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/TransactionChoiceView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/ViewFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/ViewFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/WorkerBannerIdView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerBannerIdView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/WorkerSelectionView.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerSelectionView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/src/userinterface/WorkerTableModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/src/userinterface/WorkerTableModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/model/Librarian.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/model/Librarian.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/model/Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/model/Worker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/model/WorkerCollection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/model/WorkerCollection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/TransactionChoiceView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/ViewFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/ViewFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerBannerIdView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerBannerIdView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerBannerIdView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerBannerIdView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerBannerIdView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerBannerIdView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerSelectionView$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerSelectionView$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerSelectionView$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerSelectionView$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerSelectionView$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerSelectionView$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerSelectionView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerSelectionView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerTableModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Project/userinterface/WorkerTableModel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +58,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Hunter" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -165,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618364558889</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Committing to main">
+      <created>1618418938147</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1618418938147</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,7 +220,8 @@
     <MESSAGE value="Worker, StudentBorrower, and Book model classes" />
     <MESSAGE value="Started trying updateWorker, unfinished. Has problems." />
     <MESSAGE value="Zach told me to put a comment for later... He also said he is the king..." />
-    <option name="LAST_COMMIT_MESSAGE" value="Zach told me to put a comment for later... He also said he is the king..." />
+    <MESSAGE value="Committing to main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Committing to main" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CSC429Development$Library.ic" NAME="Library Coverage Results" MODIFIED="1618329628892" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

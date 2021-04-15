@@ -17,9 +17,12 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 
+import java.util.Properties;
+
 public class WorkerBannerIdView extends View {
 
     protected TextField fName;
+    protected TextField lName;
 
     protected Button cancelButton;
     protected Button submitButton;
@@ -73,22 +76,32 @@ public class WorkerBannerIdView extends View {
         prompt.setWrappingWidth(400);
         prompt.setTextAlignment(TextAlignment.CENTER);
         prompt.setFill(Color.BLACK);
-        grid.add(prompt, 0, 0, 2, 1);
+        grid.add(prompt, 0, 0, 1, 1);
 
 
         fName = new TextField();
         fName.setEditable(true);
         fName.setAlignment(Pos.CENTER);
-        grid.add(fName,0,1,2,1);
+        grid.add(fName,0,1,1,1);
+
+        Text prompt2 = new Text("Last Name");
+        prompt2.setWrappingWidth(400);
+        prompt2.setTextAlignment(TextAlignment.CENTER);
+        prompt2.setFill(Color.BLACK);
+        grid.add(prompt2, 1, 0, 1, 1);
+
+
+        lName = new TextField();
+        lName.setEditable(true);
+        lName.setAlignment(Pos.CENTER);
+        grid.add(lName,1,1,1,1);
 
         submitButton = new Button("Submit");
         submitButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent e) {
 
-                //processAction(e);
-
-                myModel.stateChangeRequest("SelectWorkerView", fName.getText());
+                processAction(e);
             }
         });
 
@@ -164,7 +177,14 @@ public class WorkerBannerIdView extends View {
 
         clearErrorMessage();
 
-        String zipCode = fName.getText();
+        Properties p = new Properties();
+        System.out.println(fName.getText() + " " + lName.getText());
+        p.setProperty("firstName", fName.getText());
+        p.setProperty("lastName", lName.getText());
+        myModel.stateChangeRequest("SelectWorkerView", p);
+
+        fName.clear();
+        lName.clear();
     }
 
 }

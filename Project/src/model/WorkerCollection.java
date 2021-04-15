@@ -80,8 +80,9 @@ public class WorkerCollection   extends EntityBase implements IView
         }
 
     }
-    public void getFirstName(String fName) {
-        String query = "SELECT * FROM " + myTableName + " WHERE (firstName LIKE '%" + fName + "%')";
+    public void getFirstAndLastName(String fName, String lName) {
+        String query = "SELECT * FROM " + myTableName + " WHERE firstName LIKE '%" + fName + "%' AND lastName LIKE '%" + lName + "%'";
+        System.out.println(query);
         try {
             queryer(query);
         } catch (Exception x) {
@@ -100,8 +101,9 @@ public class WorkerCollection   extends EntityBase implements IView
     public void queryer(String d) throws InvalidPrimaryKeyException {
         Vector allDataRetrieved = getSelectQueryResult(d);
 
-        if (allDataRetrieved != null)
+        if (allDataRetrieved.isEmpty() == false)
         {
+            System.out.println("query is getting results");
             workers = new Vector<Worker>();
 
             for (int cnt = 0; cnt < allDataRetrieved.size(); cnt++)
@@ -120,6 +122,7 @@ public class WorkerCollection   extends EntityBase implements IView
         }
         else
         {
+            System.out.println("It is not getting results");
             throw new InvalidPrimaryKeyException("No books that match criteria");
         }
     }
@@ -175,10 +178,7 @@ public class WorkerCollection   extends EntityBase implements IView
     public Object getState(String key)
     {
         if (key.equals("Workers")) {
-
-            System.out.println("Hunter Thomas says hi");
             return workers;
-
         }
         else
         if (key.equals("WorkerList"))

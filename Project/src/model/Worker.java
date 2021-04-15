@@ -81,6 +81,7 @@ public class Worker extends EntityBase {
                 throw new PasswordMismatchException("Password missing for account");
             }
     }
+
     public Worker(String bannerId) throws InvalidPrimaryKeyException {
         super(myTableName);
         this.setDependencies();
@@ -136,6 +137,10 @@ public class Worker extends EntityBase {
 
     public Worker() {
         exists = false;
+    }
+
+    public void setExistsTrue(boolean x){
+        exists = true;
     }
 
     private void setDependencies(){
